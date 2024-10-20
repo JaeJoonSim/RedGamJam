@@ -8,6 +8,8 @@ namespace BlueRiver.Character
         [Header("LAYERS")]
         public LayerMask PlayerLayer;
 
+        public LayerMask WallLayer;
+        
         [Header("INPUT")]
         public bool SnapInput = true;
 
@@ -25,7 +27,9 @@ namespace BlueRiver.Character
         public float GroundDeceleration = 60;
 
         public float AirDeceleration = 30;
-        
+
+        public float wallSlidingSpeed = 2f;
+
         [Range(0f, -10f)]
         public float GroundingForce = -1.5f;
 

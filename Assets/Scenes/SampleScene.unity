@@ -464,7 +464,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -877,9 +877,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1505529547}
-  - component: {fileID: 1505529549}
   - component: {fileID: 1505529545}
   - component: {fileID: 1505529548}
+  - component: {fileID: 1505529549}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -902,7 +902,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: de9899b88b355054cb5177f44584b169, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -976,7 +976,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.41, y: 0.67}
+  m_Size: {x: 0.4, y: 0.7}
   m_Direction: 0
 --- !u!1 &1994009257
 GameObject:
