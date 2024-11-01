@@ -109,24 +109,28 @@ public class Tree : MonoBehaviour
         TreeTemperature.TakeDamage(Damage);
     }
 
+    //외부적 요인으로 온도 감소
+    public void TakeDamage(float _value)
+    {
+        TreeTemperature.TakeDamage(_value);
+    }
+
     //나무 자체 힐량으로 온도 회복
     public void RecoverByValue()
     {
         TreeTemperature.Recover(RecoverValue);
     }
 
-
-    //밑에 부터는 적재 적소에 호출해 주세용~~
     //회복 정도는 현재 최대 온도 게이지의 n% 만큼 회복 (움막)
     public void RecoverByMaxTemperature()
     {
         TreeTemperature.Recover(TreeTemperature.GetMaxTemperature() * RecoverPercent);
     }
 
-    //외부적 요인으로 온도 감소
-    public void TakeDamage(float _value)
+    //Outdoor는 Default와 마찬가지로 야외이지만, 해당 Platform에서는 묘목의 Temp_Damage의 n%만큼 감소량이 감소됨    Ex) Temp_Damage: 20, Outdoor: 20%, 총 초당 감소량: 16
+    public void TakeReduceDamage(float _percent)
     {
-        TreeTemperature.TakeDamage(_value);
+        TreeTemperature.TakeDamage(Damage * _percent);
     }
 
     //죽었나연?
