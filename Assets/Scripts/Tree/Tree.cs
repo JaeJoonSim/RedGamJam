@@ -137,4 +137,10 @@ public class Tree : MonoBehaviour
     {
         TreeTemperature.TakeDamage(_value);
     }
+
+    //죽었나연?
+    public bool IsDead()
+    {
+        return TreeTemperature.GetTemperature() == 0;
+    }
 }

@@ -67,4 +67,9 @@ public class Temperature : MonoBehaviour
     {
         return MaxTemperature;
     }
+
+    public float GetTemperature()
+    {
+        return CurrentTemperature;
+    }
 }
