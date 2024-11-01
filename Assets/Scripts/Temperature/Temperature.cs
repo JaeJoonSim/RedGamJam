@@ -5,8 +5,7 @@ using UnityEngine;
 //온도
 public class Temperature : MonoBehaviour
 {
-    //기본 최대 온도
-    [SerializeField] private float DefaultMaxTemperature;    
+    [SerializeField] float MaxTemperature;
 
     //온도 게이지가 최대 온도 게이지의 n%만큼 감소할 때마다 최대 온도 게이지가 m만큼 감소 m 0.00 ~ 1.00
     [SerializeField] private float ReducePercent;
@@ -16,15 +15,14 @@ public class Temperature : MonoBehaviour
 
     //현재 온도
     private float CurrentTemperature;
-
-    private float MaxTemperature;
+    
     private float PrevTemperature;
 
     private bool IsPause;
 
     private void Start()
     {
-        CurrentTemperature = MaxTemperature = DefaultMaxTemperature;
+        CurrentTemperature = MaxTemperature;
         PrevTemperature = CurrentTemperature;
     }
 
@@ -33,10 +31,6 @@ public class Temperature : MonoBehaviour
         CurrentTemperature = Mathf.Clamp(CurrentTemperature += _value, 0, MaxTemperature);
     }
 
-    public void RecoverMaxTemperature(float _value)
-    {
-        CurrentTemperature = Mathf.Clamp(CurrentTemperature += _value, 0, MaxTemperature);
-    }
 
     public void SetPause(bool _value)
     {
@@ -54,12 +48,16 @@ public class Temperature : MonoBehaviour
         CurrentTemperature = Mathf.Clamp(CurrentTemperature -= _value, 0, MaxTemperature);
 
         int calcValue = 0;
-        calcValue = (int)(DefaultMaxTemperature * ReducePercent);
+        calcValue = (int)(MaxTemperature * ReducePercent);
 
         if (PrevTemperature - calcValue >= CurrentTemperature)
         {
             PrevTemperature = CurrentTemperature;
-            MaxTemperature = Mathf.Clamp(MaxTemperature -= DecreaseMaxTemperature, 0, DefaultMaxTemperature);
+            MaxTemperature -= DecreaseMaxTemperature;
+            if(MaxTemperature <= 0)
+            {
+                CurrentTemperature = MaxTemperature = 0;
+            }
         }
     }
 

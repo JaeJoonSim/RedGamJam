@@ -18,9 +18,6 @@ public class Tree : MonoBehaviour
     //회복 정도는 현재 최대 온도 게이지의 n% 만큼 회복(움막)
     [SerializeField] private float RecoverPercent;
 
-    //감소된 최대 온도 게이지의 n%만큼 회복
-    [SerializeField] private float RecoverMaxTemperaturePercent;
-
 
     //온도
     private Temperature TreeTemperature;
@@ -124,12 +121,6 @@ public class Tree : MonoBehaviour
     public void RecoverByMaxTemperature()
     {
         TreeTemperature.Recover(TreeTemperature.GetMaxTemperature() * RecoverPercent);
-    }
-
-    //최대 온도 게이지가 감소 했다면 감소된 최대 온도 게이지의 n%만큼 현재 온도 게이지 회복
-    public void RecoverMaxTemperature()
-    {
-        TreeTemperature.RecoverMaxTemperature(TreeTemperature.GetMaxTemperature() * RecoverMaxTemperaturePercent);
     }
 
     //외부적 요인으로 온도 감소
