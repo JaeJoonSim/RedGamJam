@@ -5,6 +5,7 @@ using UnityEngine;
 public class DefaultPlatform : MonoBehaviour
 {
     [SerializeField] protected float FallingSpeed;
+    [SerializeField] bool CanFalling;
 
     protected Tree MyCuteTree;
 
@@ -12,7 +13,7 @@ public class DefaultPlatform : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(IsFalling)
+        if(IsFalling && CanFalling)
         {
             transform.position -= new Vector3(0.0f, FallingSpeed * Time.deltaTime, 0.0f);
         }        
