@@ -46,7 +46,7 @@ namespace BlueRiver.Items
             if (currentSelectionCount < maxSelectionCount)
             {
                 var tree = TreeItemIcon.Instance.SearchTree(treeType);
-
+                Debug.Log($"Selected tree: {treeType}");
                 player.SelectTree(tree);
                 currentSelectionCount++;
 
