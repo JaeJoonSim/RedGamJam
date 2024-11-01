@@ -23,10 +23,18 @@ public class Temperature : MonoBehaviour
     private float MaxTemperature;
     private float PrevTemperature;
 
+    private bool IsPause;
+
     private void Start()
     {
         CurrentTemperature = MaxTemperature = DefaultMaxTemperature;
         PrevTemperature = CurrentTemperature;
+    }
+
+    //온도 변동 값 Set
+    public void SetPause(bool _value)
+    {
+        IsPause = _value;
     }
 
     //온도 변동 값 Set
@@ -62,6 +70,11 @@ public class Temperature : MonoBehaviour
     //온도 계산
     public void SetTemperature()
     {
+        if (IsPause)
+        {
+            return;
+        }
+
         //클램프로 0 ~ DefaultMaxTemperature 범위 제한
         CurrentTemperature = Mathf.Clamp(CurrentTemperature += Value, 0, DefaultMaxTemperature);
 

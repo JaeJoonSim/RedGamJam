@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -14,14 +15,22 @@ public class TemperatureManager : MonoBehaviour
 
     Coroutine CurrentCoroutine;
 
-    //test
     public void Start()
     {
-        for (int i = 0; i < TemperatureList.Count; i++)
-        {
-            TemperatureList[i].SetValue(-5);
-        }
         BeginTemperatureCalc();
+    }
+
+    //온도 일시 정지
+    public void PauseTemperature(Temperature _temperature, float _pauseTime)
+    {
+        //온도 찾음
+        Temperature temperature = TemperatureList.Find(t => t == _temperature);
+
+        //퍼즈
+        temperature.SetPause(true);
+
+        //코루틴
+        StartCoroutine(UnPauseTemperature(temperature, _pauseTime));
     }
 
     //온도 변화 시작 (게임 시작시)
@@ -49,5 +58,14 @@ public class TemperatureManager : MonoBehaviour
         Coroutine coroutine = CurrentCoroutine;
         StopCoroutine(coroutine);        
         CurrentCoroutine = StartCoroutine(TemperatureCalc());
+    }
+
+    IEnumerator UnPauseTemperature(Temperature _temperature, float _pauseTime)
+    {
+        //퍼즈 시간 지나면
+        yield return new WaitForSeconds(_pauseTime);
+
+        //퍼즈 해제
+        _temperature.SetPause(false);
     }
 }
