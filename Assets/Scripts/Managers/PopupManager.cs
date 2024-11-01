@@ -16,9 +16,9 @@ namespace BlueRiver.UI
         {
             get
             {
-                GameObject root = GameObject.Find("@UI_Root");
+                GameObject root = GameObject.Find("Canvas");
                 if (root == null)
-                    root = new GameObject { name = "@UI_Root" };
+                    root = new GameObject { name = "Canvas" };
                 return root;
             }
         }

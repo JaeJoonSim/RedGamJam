@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BlueRiver.ItemSelector
+namespace BlueRiver.Items
 {
     public class ItemSelector : MonoBehaviour
     {
@@ -21,6 +21,10 @@ namespace BlueRiver.ItemSelector
             {
                 GameObject go = Instantiate(selectorCell, cellArea);
                 go.name = $"Item Select Cell_{i}";
+                
+                var cell = go.GetComponent<ItemSelectorCell>();
+                if (cell != null)
+                    cell.SetItem((StartItemType)i + 1);
             }
         }
     }

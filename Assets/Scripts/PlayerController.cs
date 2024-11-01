@@ -1,3 +1,5 @@
+using BlueRiver.Items;
+using BlueRiver.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +17,9 @@ namespace BlueRiver.Character
         private Vector2 frameVelocity;
         private bool cachedQueryStartInColliders;
 
+        private StartItemType selectedItem;
+        private bool itemSelected = false;
+
         #region Interface
 
         public Vector2 FrameInput => frameInput.Move;
@@ -31,6 +36,7 @@ namespace BlueRiver.Character
             col = GetComponent<CapsuleCollider2D>();
 
             cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
+            PopupManager.ShowPopup<UI_Popup>("Item Selector");
         }
 
         private void Update()
@@ -177,6 +183,58 @@ namespace BlueRiver.Character
         #endregion
 
         private void ApplyMovement() => rigid2d.velocity = frameVelocity;
+
+        #region Select Start Items
+        public void SelectItem(StartItemType item)
+        {
+            if (!itemSelected)
+            {
+                selectedItem = item;
+                itemSelected = false;
+                UseItemEffect();
+            }
+        }
+
+        public void UseItemEffect()
+        {
+            switch (selectedItem)
+            {
+                case StartItemType.Lighter:
+                    UseLighter();
+                    break;
+                case StartItemType.TemperatureRecovery:
+                    RecoverTemperature();
+                    break;
+                case StartItemType.BlizzardResist:
+                    ResistBlizzard();
+                    break;
+                case StartItemType.NoWeightPenalty:
+                    IgnoreWeightPenalty();
+                    break;
+            }
+        }
+
+        private void UseLighter()
+        {
+            Debug.Log("Using Lighter: Stop temperature gauge for n seconds");
+        }
+
+        private void RecoverTemperature()
+        {
+            Debug.Log("Recovering temperature: One-time use");
+        }
+
+        private void ResistBlizzard()
+        {
+            Debug.Log("Blizzard resistance: No backward push or speed reduction");
+        }
+
+        private void IgnoreWeightPenalty()
+        {
+            Debug.Log("Ignoring weight penalty: Temperature recovery not possible");
+        }
+
+        #endregion
 
 #if UNITY_EDITOR
         private void OnValidate()
