@@ -10,8 +10,6 @@ namespace BlueRiver.Items
 {
     public class ItemSelectorCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        [SerializeField]
-        private GameObject IPointerObj;
         private Button selectButton;
         private StartItemType itemType;
         public event System.Action<StartItemType> OnItemSelected;
@@ -36,12 +34,12 @@ namespace BlueRiver.Items
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            IPointerObj.SetActive(true);
+            selectButton.gameObject.SetActive(true);
         }
         
         public void OnPointerExit(PointerEventData eventData)
         {
-            IPointerObj.SetActive(false);
+            selectButton.gameObject.SetActive(false);
         }
     }
 }

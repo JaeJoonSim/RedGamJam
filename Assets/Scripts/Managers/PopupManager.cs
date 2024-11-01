@@ -19,6 +19,9 @@ namespace BlueRiver.UI
                 GameObject root = GameObject.Find("Canvas");
                 if (root == null)
                     root = new GameObject { name = "Canvas" };
+
+                Utils.Utils.GetOrAddComponent<Canvas>(root);
+                Utils.Utils.GetOrAddComponent<UnityEngine.UI.GraphicRaycaster>(root);
                 return root;
             }
         }
@@ -38,6 +41,8 @@ namespace BlueRiver.UI
             {
                 canvas.sortingOrder = 0;
             }
+
+            Utils.Utils.GetOrAddComponent<UnityEngine.UI.GraphicRaycaster>(go);
         }
 
         public static T MakeSubItem<T>(Transform parent = null, string name = null) where T : UI_Base
