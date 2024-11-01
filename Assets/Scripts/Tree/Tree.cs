@@ -35,13 +35,10 @@ public class Tree : MonoBehaviour
     }
 
     //온도 일시 정지
-    public void PauseDamageTime(Temperature _temperature, float _pauseTime)
+    public void PauseDamageTime(bool _value)
     {
         //퍼즈
-        TreeTemperature.SetPause(true);
-
-        //코루틴
-        StartCoroutine(UnPauseTemperature(_pauseTime));
+        TreeTemperature.SetPause(_value);
     }
 
     //데미지 루프 시작
@@ -92,15 +89,6 @@ public class Tree : MonoBehaviour
             Count -= 1;
             CurrentCoroutine2 = StartCoroutine(DamageLoop());
         }
-    }
-
-    IEnumerator UnPauseTemperature(float _pauseTime)
-    {
-        //퍼즈 시간 지나면
-        yield return new WaitForSeconds(_pauseTime);
-
-        //퍼즈 해제
-        TreeTemperature.SetPause(false);
     }
 
     //나무 데미지만큼 온도 감소
