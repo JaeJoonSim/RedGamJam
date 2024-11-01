@@ -22,6 +22,8 @@ namespace BlueRiver.Character
         [Header("MOVEMENT")]
         public float MaxSpeed = 14;
 
+        public float InSnowStormMoveSpeed = 7;
+
         public float Acceleration = 120;
 
         public float GroundDeceleration = 60;
