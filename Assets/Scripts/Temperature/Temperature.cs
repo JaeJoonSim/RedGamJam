@@ -9,7 +9,7 @@ public class Temperature : MonoBehaviour
     [SerializeField] private float DefaultMaxTemperature;    
 
     //온도 게이지가 최대 온도 게이지의 n%만큼 감소할 때마다 최대 온도 게이지가 m만큼 감소 m 0.00 ~ 1.00
-    [SerializeField] private float Percent;
+    [SerializeField] private float ReducePercent;
 
     //최대 온도 깎이는 값
     [SerializeField] private float DecreaseMaxTemperature;
@@ -17,14 +17,10 @@ public class Temperature : MonoBehaviour
     //현재 온도
     private float CurrentTemperature;
 
-    //온도 변동 값 음수면 깎이고 양수면 증가
-    private float Value;
-
     private float MaxTemperature;
     private float PrevTemperature;
 
     private bool IsPause;
-    private float DefaultDamage;
 
     private void Start()
     {
@@ -32,75 +28,43 @@ public class Temperature : MonoBehaviour
         PrevTemperature = CurrentTemperature;
     }
 
-    //온도 변동 값 Set
+    public void Recover(float _value)
+    {
+        CurrentTemperature = Mathf.Clamp(CurrentTemperature += _value, 0, MaxTemperature);
+    }
+
+    public void RecoverMaxTemperature(float _value)
+    {
+        CurrentTemperature = Mathf.Clamp(CurrentTemperature += _value, 0, MaxTemperature);
+    }
+
     public void SetPause(bool _value)
     {
         IsPause = _value;
     }
 
-    //데미지 값 Set
-    public void SetDefaultDamage(float _damage)
-    {
-        DefaultDamage = _damage;
-    }
-
-    //온도 변동 값 Set
-    public void SetValue(float _value)
-    {
-        Value += (_value - DefaultDamage);
-    }
-
-    //최대 온도 값 Set
-    public void SetMaxTemperature(float _value)
-    {
-        MaxTemperature = Mathf.Clamp(MaxTemperature + _value, 0, DefaultMaxTemperature);
-    }
-
-    //온도 변동 값 Get
-    public float GetValue()
-    {
-        return Value;
-    }
-
-    //온도 값 Get
-    public float GetTemperature()
-    {
-        return CurrentTemperature;
-    }
-
-    //온도 값 Set
-    public float GetMaxTemperature()
-    {
-        return MaxTemperature;
-    }
-
     //온도 계산
-    public void SetTemperature()
+    public void TakeDamage(float _value)
     {
         if (IsPause)
         {
             return;
         }
 
-        //클램프로 0 ~ DefaultMaxTemperature 범위 제한
-        CurrentTemperature = Mathf.Clamp(CurrentTemperature += Value, 0, DefaultMaxTemperature);
-
-        //Debug.Log("현재 온도 : " + CurrentTemperature + "변동 값 : " + Value);
+        CurrentTemperature = Mathf.Clamp(CurrentTemperature -= _value, 0, MaxTemperature);
 
         int calcValue = 0;
-        //온도 깎였을 때
-        if (Value < 0)            
-        {
-            calcValue = (int)(DefaultMaxTemperature * Percent);
+        calcValue = (int)(DefaultMaxTemperature * ReducePercent);
 
-            //Debug.Log("calcValue : " + (PrevTemperature - calcValue));
-            if (PrevTemperature - calcValue >= CurrentTemperature)
-            {
-                //MaxTemperature DecreaseMaxTemperature 만큼 감소
-                PrevTemperature = CurrentTemperature;
-                MaxTemperature = Mathf.Clamp(MaxTemperature -= DecreaseMaxTemperature, 0, DefaultMaxTemperature);
-                //Debug.Log("최대 온도 : " + MaxTemperature);
-            }
+        if (PrevTemperature - calcValue >= CurrentTemperature)
+        {
+            PrevTemperature = CurrentTemperature;
+            MaxTemperature = Mathf.Clamp(MaxTemperature -= DecreaseMaxTemperature, 0, DefaultMaxTemperature);
         }
+    }
+
+    public float GetMaxTemperature()
+    {
+        return MaxTemperature;
     }
 }
