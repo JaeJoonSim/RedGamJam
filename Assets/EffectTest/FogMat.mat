@@ -60,7 +60,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _FogColor: {r: 1, g: 1, b: 1, a: 0.05882353}
+    - _FogColor: {r: 1, g: 1, b: 1, a: 0.019607844}
     - _FogSpeed: {r: 3, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &537240813884276789
