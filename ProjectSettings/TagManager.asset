@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shelter
+  - DefaultPlatform
+  - OutDoorPlatform
+  - InDoorPlatform
+  - TentPlatform
   layers:
   - Default
   - TransparentFX
