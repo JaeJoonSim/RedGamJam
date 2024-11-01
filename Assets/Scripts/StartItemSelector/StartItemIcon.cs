@@ -11,7 +11,7 @@ namespace BlueRiver.Items
         None,
         Lighter,
         TemperatureRecovery,
-        BlizzardResist,
+        SnowStormResist,
         NoWeightPenalty
     }
 

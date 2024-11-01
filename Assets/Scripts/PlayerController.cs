@@ -224,7 +224,7 @@ namespace BlueRiver.Character
                 case StartItemType.TemperatureRecovery:
                     RecoverTemperature();
                     break;
-                case StartItemType.BlizzardResist:
+                case StartItemType.SnowStormResist:
                     ResistSnowStorm();
                     break;
                 case StartItemType.NoWeightPenalty:
