@@ -47,7 +47,7 @@ namespace BlueRiver.Character
             col = GetComponent<CapsuleCollider2D>();
 
             cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
-            PopupManager.ShowPopup<UI_Popup>("Item Selector");
+            PopupManager.ShowPopup<UI_Popup>("Tree Selector");
         }
 
         private void Update()
@@ -219,7 +219,7 @@ namespace BlueRiver.Character
 
         public void SelectTree(Tree tree)
         {
-            if (!treeSelect)
+            if (!treeSelect && tree != null)
             {
                 this.tree = Instantiate(tree, treeArea);
                 treeSelect = true;

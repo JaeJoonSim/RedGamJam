@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace BlueRiver.Items
 { 
-    public class TreeSelectorCell : MonoBehaviour
+    public class TreeSelectorCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         private Button selectButton;
         private TreeItemType treeType;
