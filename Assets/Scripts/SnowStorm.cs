@@ -8,6 +8,7 @@ namespace BlueRiver
     public class SnowStorm : MonoBehaviour
     {
         [SerializeField] private SnowStormStats snowStats;
+        [SerializeField] private ParticleSystem snowStormParticle;
         [SerializeField] private PlayerController player;
 
         private BoxCollider2D stormArea;
@@ -17,7 +18,6 @@ namespace BlueRiver
         private void Start()
         {
             stormArea = GetComponent<BoxCollider2D>();
-
             StartCoroutine(SnowStormCycle());
         }
 
@@ -28,6 +28,8 @@ namespace BlueRiver
                 ApplySnowStormEffect();
                 MoveSnowStorm();
                 AdjustStormAreaSize();
+                CheckParticleDeactivate();
+                SetParticlePosition();
             }
         }
 
@@ -36,6 +38,7 @@ namespace BlueRiver
             while (true)
             {
                 yield return new WaitForSeconds(snowStats.Event_Snow_Start + Random.Range(0, snowStats.Event_Snow_Start));
+                snowStormParticle.Play();
                 StartSnowStorm();
                 yield return new WaitForSeconds(snowStats.Event_Snow_Time);
                 StopSnowStorm();
@@ -48,12 +51,14 @@ namespace BlueRiver
             isBlizzardActive = true;
             blizzardTimer = snowStats.Event_Snow_Time;
             SetInitialPosition();
+            
             Debug.Log("Snowstorm started!");
         }
 
         private void StopSnowStorm()
         {
             isBlizzardActive = false;
+            snowStormParticle.Stop();
             Debug.Log("Snowstorm ended!");
         }
 
@@ -88,11 +93,28 @@ namespace BlueRiver
             transform.position = new Vector3(cameraRightEdge.x + stormWidth / 2, transform.position.y, transform.position.z);
         }
 
+        private void SetParticlePosition()
+        {
+            Vector3 cameraTopRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+            Vector3 particlePosition = new Vector3(cameraTopRight.x, cameraTopRight.y, snowStormParticle.transform.position.z);
+            snowStormParticle.transform.position = particlePosition;
+        }
+
         private void AdjustStormAreaSize()
         {
             float newWidth = snowStats.Event_Snow_Move_Spd * snowStats.Event_Snow_Time;
             float newHeight = Camera.main.orthographicSize * 2;
             stormArea.size = new Vector2(newWidth, newHeight);
+        }
+
+        private void CheckParticleDeactivate()
+        {
+            // 눈보라의 오른쪽 끝이 카메라의 왼쪽을 지나면 파티클을 끔
+            Vector3 cameraLeftEdge = Camera.main.ViewportToWorldPoint(new Vector3(0, 0.5f, 0));
+            if (transform.position.x + stormArea.size.x / 2 < cameraLeftEdge.x)
+            {
+                snowStormParticle.Stop();
+            }
         }
 
         private bool PlayerInSnowStorm(Transform player)

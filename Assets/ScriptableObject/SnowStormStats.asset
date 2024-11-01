@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event_Snow_Spd: 20
   Event_Snow_Jump_Spd: 60
-  Event_Snow_Move_Spd: 80
+  Event_Snow_Move_Spd: 10
   Event_Snow_Damage: 0.1
   Event_Snow_Time: 10
   Event_Snow_Start: 1
-  Event_Snow_Cool: 1
+  Event_Snow_Cool: 5
