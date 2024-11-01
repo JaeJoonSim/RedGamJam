@@ -20,8 +20,9 @@ namespace BlueRiver.Character
         private StartItemType selectedItem;
         private bool itemUsed = false;
         private bool isSheltered = false;
+        private bool ignoreWeightPenalty = false;
 
-        [SerializeField] private Temperature tree;
+        [SerializeField] private Tree tree;
 
         #region Interface
 
@@ -169,7 +170,14 @@ namespace BlueRiver.Character
             }
             else
             {
-                frameVelocity.x = Mathf.MoveTowards(frameVelocity.x, frameInput.Move.x * stats.MaxSpeed, stats.Acceleration * Time.fixedDeltaTime);
+                float speed = 0; ;
+
+                if (tree == null || ignoreWeightPenalty)
+                    speed = stats.MaxSpeed;
+                else
+                    speed = tree.GetWeight();
+
+                frameVelocity.x = Mathf.MoveTowards(frameVelocity.x, frameInput.Move.x * speed, stats.Acceleration * Time.fixedDeltaTime);
             }
         }
 
@@ -223,16 +231,16 @@ namespace BlueRiver.Character
 
         private IEnumerator UseLighter()
         {
-            tree.SetPause(true);
+            tree.PauseDamageTime(true);
 
             yield return new WaitForSeconds(stats.LighterTime);
 
-            tree.SetPause(false);
+            tree.PauseDamageTime(false);
         }
 
         private void RecoverTemperature()
         {
-            tree.SetValue(stats.RecoverTemperature);
+            tree.StartRecoverLoop(stats.RecoverTemperature);
         }
 
         private void ResistBlizzard()
@@ -242,7 +250,7 @@ namespace BlueRiver.Character
 
         private void IgnoreWeightPenalty()
         {
-            tree.GetComponent<Tree>().SetWeight(0);
+            
         }
 
         #endregion
@@ -257,7 +265,7 @@ namespace BlueRiver.Character
 
             rigid2d.AddForce(new Vector2(-appliedPushSpeed, 0), ForceMode2D.Force);
             Debug.LogError("Player is pushed by the snowstorm.");
-            tree.SetValue(-damage * Time.deltaTime);
+            tree.StartRecoverLoop(-damage * Time.deltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

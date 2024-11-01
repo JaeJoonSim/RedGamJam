@@ -54,7 +54,7 @@ public class Tree : MonoBehaviour
     }
 
     //힐 루프 시작
-    public void StartRecoverLoop(int _maxTime)
+    public void StartRecoverLoop(float _maxTime)
     {
         StartCoroutine(RecoverLoop(_maxTime));
     }
@@ -72,9 +72,9 @@ public class Tree : MonoBehaviour
     }
 
     //온도 증가 루프
-    IEnumerator RecoverLoop(int _maxTime)
+    IEnumerator RecoverLoop(float _maxTime)
     {
-        int Count = _maxTime;
+        float Count = _maxTime;
 
         yield return new WaitForSeconds(1.0f);
 
