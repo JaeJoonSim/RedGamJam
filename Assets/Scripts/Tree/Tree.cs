@@ -24,6 +24,10 @@ public class Tree : MonoBehaviour
     private Coroutine CurrentCoroutine;
     private Coroutine CurrentCoroutine2;
 
+    private float ReduceDamagePercent;
+
+    private bool OutDoor;
+
     private void Awake()
     {
         TreeTemperature = GetComponent<Temperature>();
@@ -59,12 +63,25 @@ public class Tree : MonoBehaviour
         StartCoroutine(RecoverLoop(_maxTime));
     }
 
+    public void SetOutDoor(bool _value)
+    {
+        OutDoor = _value;
+    }
+
     //온도 감소 루프
     IEnumerator DamageLoop()
     {
         yield return new WaitForSeconds(DamageTime);
 
-        TakeDamage();
+        if(OutDoor)
+        {
+            TakeDamage(Damage * ReduceDamagePercent);
+        }
+        else
+        {
+            TakeDamage();
+        }
+        
 
         Coroutine coroutine = CurrentCoroutine;
         StopCoroutine(coroutine);
@@ -125,5 +142,10 @@ public class Tree : MonoBehaviour
     public bool IsDead()
     {
         return TreeTemperature.GetTemperature() == 0;
+    }
+
+    public void SetReduceDamagePercent(float _value)
+    {
+        ReduceDamagePercent = _value;
     }
 }

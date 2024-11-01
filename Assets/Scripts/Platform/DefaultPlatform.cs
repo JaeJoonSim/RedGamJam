@@ -6,19 +6,21 @@ public class DefaultPlatform : MonoBehaviour
 {
     [SerializeField] protected float FallingSpeed;
 
-    void Start()
-    {
-        
-    }
+    protected Tree MyCuteTree;
+
+    private bool IsFalling;
 
     protected virtual void Update()
     {
-        transform.position -= new Vector3(0.0f, FallingSpeed * Time.deltaTime, 0.0f);
+        if(IsFalling)
+        {
+            transform.position -= new Vector3(0.0f, FallingSpeed * Time.deltaTime, 0.0f);
+        }        
     }
 
     protected virtual void BeginEvent()
     {
-
+        MyCuteTree.PauseDamageTime(false);
     }
 
     protected virtual void EndEvent()
@@ -26,13 +28,25 @@ public class DefaultPlatform : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider _other)
     {
-        BeginEvent();
+        MyCuteTree = _other.GetComponent<Tree>();
+        if (MyCuteTree != null)
+        {
+            BeginEvent();
+        }        
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider _other)
     {
-        EndEvent();
+        if (MyCuteTree != null)
+        {
+            EndEvent();
+        }
+    }
+
+    protected void SetFalling(bool _value)
+    {
+        IsFalling = _value;
     }
 }
