@@ -72,6 +72,8 @@ namespace BlueRiver.UI
             T popup = Utils.Utils.GetOrAddComponent<T>(go);
             _popupStack.Push(popup);
 
+            Time.timeScale = 0;
+
             return popup;
         }
 
@@ -85,6 +87,8 @@ namespace BlueRiver.UI
                 Debug.Log("ClosePopup Failed");
                 return;
             }
+
+            Time.timeScale = 1;
 
             ClosePopup();
         }

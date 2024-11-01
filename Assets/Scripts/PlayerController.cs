@@ -18,6 +18,7 @@ namespace BlueRiver.Character
         private bool cachedQueryStartInColliders;
 
         private StartItemType selectedItem;
+        private bool itemUsed = false;
 
         #region Interface
 
@@ -31,18 +32,13 @@ namespace BlueRiver.Character
 
         private void Awake()
         {
-            
+            GameManager.Instance.player = this;
 
             rigid2d = GetComponent<Rigidbody2D>();
             col = GetComponent<CapsuleCollider2D>();
 
             cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
             PopupManager.ShowPopup<UI_Popup>("Item Selector");
-        }
-
-        private void Start()
-        {
-            GameManager.Instance.player = this;
         }
 
         private void Update()
@@ -55,8 +51,8 @@ namespace BlueRiver.Character
         {
             frameInput = new FrameInput
             {
-                JumpDown = Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.C),
-                JumpHeld = Input.GetButton("Jump") || Input.GetKey(KeyCode.C),
+                JumpDown = Input.GetButtonDown("Jump"),
+                JumpHeld = Input.GetButton("Jump"),
                 Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
             };
 
@@ -70,6 +66,12 @@ namespace BlueRiver.Character
             {
                 _jumpToConsume = true;
                 _timeJumpWasPressed = time;
+            }
+
+            if (Input.GetKeyDown(KeyCode.C) && !itemUsed)
+            {
+                UseItemEffect();
+                itemUsed = true;
             }
         }
 
@@ -194,7 +196,7 @@ namespace BlueRiver.Character
         public void SelectItem(StartItemType item)
         {
             selectedItem = item;
-            UseItemEffect();
+            itemUsed = false;
         }
 
         public void UseItemEffect()
