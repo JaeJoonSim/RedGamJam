@@ -8,6 +8,8 @@ public class Tree : MonoBehaviour
 {
     //무게
     [SerializeField]float Weight;
+    // UI 표시 무게
+    [SerializeField] float DisplayWeight;
     //데미지
     [SerializeField]float Damage;
     //회복량

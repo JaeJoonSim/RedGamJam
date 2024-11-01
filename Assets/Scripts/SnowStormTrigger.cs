@@ -8,17 +8,23 @@ namespace BlueRiver
     public class SnowStormTrigger : MonoBehaviour
     {
         private PlayerController player;
+        private Collider2D playerCol;
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        ParticleSystem ps;
+
+        [SerializeField] private ParticleSystem snowStormParticle;
+
+        private void Start()
         {
-            if (collision.CompareTag("Player"))
-            {
-                if (player == null)
-                    player = GameManager.Instance.player;
-                    
-                if (player != null)
-                    player.SetInSnowStorm(true);
-            }
+            player = GameManager.Instance.player;
+            playerCol = player.GetComponent<Collider2D>();
+            ps = GetComponent<ParticleSystem>();
+        }
+
+        private void OnParticleCollision(GameObject other)
+        {
+            if (other == player.gameObject)
+                player.SetInSnowStorm(true);
         }
     }
 }

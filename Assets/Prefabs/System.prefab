@@ -293,6 +293,54 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: simulationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: ForceModule.x.scalar
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: ForceModule.x.minScalar
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: CollisionModule.collisionMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7872593581409931298, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
       propertyPath: m_Name
       value: SnowStormParticle
@@ -300,7 +348,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7872593581409931298, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3659755238082540285}
   m_SourcePrefab: {fileID: 100100000, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
 --- !u!198 &1895356751266205566 stripped
 ParticleSystem:
@@ -312,6 +363,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2233598162524660227, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
   m_PrefabInstance: {fileID: 2866299186515945325}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5370034350558787407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7872593581409931298, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+  m_PrefabInstance: {fileID: 2866299186515945325}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3659755238082540285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5370034350558787407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994844d5a6505684aaa74d5bef11e87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snowStormParticle: {fileID: 1895356751266205566}
 --- !u!1001 &4614535697916014159
 PrefabInstance:
   m_ObjectHideFlags: 0

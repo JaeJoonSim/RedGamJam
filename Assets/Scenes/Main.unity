@@ -1217,6 +1217,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1125318078 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5296547126290275278, guid: 17a22dc779e09bc4990c01cdb825cc9d, type: 3}
+  m_PrefabInstance: {fileID: 4659060510191635662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1342504341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,6 +1629,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1895356751266205566, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[0]
+      value: 
+      objectReference: {fileID: 1125318078}
+    - target: {fileID: 1895356751266205566, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[1]
+      value: 
+      objectReference: {fileID: 1505529547}
     - target: {fileID: 6334345643162373231, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
       propertyPath: m_Name
       value: System

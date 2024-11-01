@@ -27,6 +27,8 @@ namespace BlueRiver.Character
         private bool inSnowStorm = false;
         private bool isResistSnowStorm = false;
 
+        private Coroutine snowStormCoroutine = null;
+
         [SerializeField] private Tree tree;
 
         #region Interface
@@ -295,6 +297,7 @@ namespace BlueRiver.Character
                 if (IsCollisionAreaAboveThreshold(collision, stats.ShelterThreshold))
                 {
                     isSheltered = true;
+                    inSnowStorm = false;
                     Debug.Log("Player is sheltered from the blizzard.");
                 }
             }
@@ -307,6 +310,7 @@ namespace BlueRiver.Character
                 if (IsCollisionAreaAboveThreshold(collision, stats.ShelterThreshold))
                 {
                     isSheltered = true;
+                    inSnowStorm = false;
                     Debug.Log("Player is sheltered from the blizzard.");
                 }
                 else
@@ -329,6 +333,21 @@ namespace BlueRiver.Character
         public void SetInSnowStorm(bool value)
         {
             inSnowStorm = value;
+
+            if (value)
+            {
+                if (snowStormCoroutine != null)
+                    StopCoroutine(snowStormCoroutine);
+
+                snowStormCoroutine = StartCoroutine(ResetInSnowStormAfterDelay(0.5f));
+            }
+        }
+
+        private IEnumerator ResetInSnowStormAfterDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            inSnowStorm = false;
+            snowStormCoroutine = null;
         }
 
         private bool IsCollisionAreaAboveThreshold(Collider2D collision, float threshold)
