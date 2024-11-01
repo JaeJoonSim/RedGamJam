@@ -19,6 +19,7 @@ namespace BlueRiver.Character
 
         private StartItemType selectedItem;
         private bool itemUsed = false;
+        private bool isSheltered = false;
 
         [SerializeField] private Temperature tree;
 
@@ -242,6 +243,39 @@ namespace BlueRiver.Character
         private void IgnoreWeightPenalty()
         {
             tree.GetComponent<Tree>().SetWeight(0);
+        }
+
+        #endregion
+
+        #region SnowStorm
+
+        public void ApplySnowStormEffect(float pushSpeed, float jumpPushSpeed, float damage)
+        {
+            if (isSheltered) return;
+
+            float appliedPushSpeed = !grounded ? jumpPushSpeed : pushSpeed;
+
+            rigid2d.AddForce(new Vector2(-appliedPushSpeed, 0), ForceMode2D.Force);
+            Debug.LogError("Player is pushed by the snowstorm.");
+            tree.SetValue(-damage * Time.deltaTime);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Shelter"))
+            {
+                isSheltered = true;
+                Debug.Log("Player is sheltered from the blizzard.");
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Shelter"))
+            {
+                isSheltered = false;
+                Debug.Log("Player left the shelter.");
+            }
         }
 
         #endregion
