@@ -149,7 +149,6 @@ GameObject:
   - component: {fileID: 8786442659613049133}
   - component: {fileID: 4854886286021456580}
   - component: {fileID: 6010846208324876782}
-  - component: {fileID: 6178011490290717590}
   m_Layer: 5
   m_Name: Item Select Panel
   m_TagString: Untagged
@@ -215,21 +214,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6178011490290717590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6357053763129160256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 469eab47532dc284babc3dead7721872, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellArea: {fileID: 4830796063984719736}
-  selectorCell: {fileID: 7749148238105831591, guid: 1a2d6d8f55fdbbf4fb13ab79cf110655, type: 3}
-  cellCount: 4
 --- !u!1 &6594703925062951534
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6291021629832237110}
   - component: {fileID: 2542138364677797963}
+  - component: {fileID: 5660017472639604263}
   m_Layer: 5
   m_Name: Item Selector
   m_TagString: Untagged
@@ -279,3 +264,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3526ec77fcdc640a285594a0c4da24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5660017472639604263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6594703925062951534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469eab47532dc284babc3dead7721872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellArea: {fileID: 4830796063984719736}
+  selectorCell: {fileID: 7749148238105831591, guid: 1a2d6d8f55fdbbf4fb13ab79cf110655, type: 3}
+  cellCount: 4

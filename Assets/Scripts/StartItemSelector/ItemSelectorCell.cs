@@ -11,6 +11,7 @@ namespace BlueRiver.Items
     {
         private Button selectButton;
         private StartItemType itemType;
+        public event System.Action<StartItemType> OnItemSelected;
 
         private void Start()
         {
@@ -27,8 +28,7 @@ namespace BlueRiver.Items
         private void OnClick()
         {
             Debug.Log("ItemSelectorCell OnClick");
-            PlayerController player = FindObjectOfType<PlayerController>();
-            player.SelectItem(itemType);
+            OnItemSelected?.Invoke(itemType);
         }
     }
 }

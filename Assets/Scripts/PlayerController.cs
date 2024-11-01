@@ -18,7 +18,6 @@ namespace BlueRiver.Character
         private bool cachedQueryStartInColliders;
 
         private StartItemType selectedItem;
-        private bool itemSelected = false;
 
         #region Interface
 
@@ -32,11 +31,18 @@ namespace BlueRiver.Character
 
         private void Awake()
         {
+            
+
             rigid2d = GetComponent<Rigidbody2D>();
             col = GetComponent<CapsuleCollider2D>();
 
             cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
             PopupManager.ShowPopup<UI_Popup>("Item Selector");
+        }
+
+        private void Start()
+        {
+            GameManager.Instance.player = this;
         }
 
         private void Update()
@@ -187,12 +193,8 @@ namespace BlueRiver.Character
         #region Select Start Items
         public void SelectItem(StartItemType item)
         {
-            if (!itemSelected)
-            {
-                selectedItem = item;
-                itemSelected = false;
-                UseItemEffect();
-            }
+            selectedItem = item;
+            UseItemEffect();
         }
 
         public void UseItemEffect()
