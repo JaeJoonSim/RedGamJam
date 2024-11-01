@@ -34,17 +34,17 @@ public class DefaultPlatform : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider _other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (_other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             BeginEvent();
-        }        
+        }
     }
 
-    void OnTriggerExit(Collider _other)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (_other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             EndEvent();
         }
