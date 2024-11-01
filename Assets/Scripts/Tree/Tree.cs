@@ -47,16 +47,19 @@ public class Tree : MonoBehaviour
         StartCoroutine(UnPauseTemperature(_pauseTime));
     }
 
+    //데미지 루프 시작
     public void StartDamageLoop()
     {
         StartCoroutine(DamageLoop());
     }
 
+    //데미지 루프 끝
     public void EndDamageLoop()
     {
         StopCoroutine(DamageLoop());
     }
 
+    //힐 루프 시작
     public void StartRecoverLoop(int _maxTime)
     {
         StartCoroutine(RecoverLoop(_maxTime));
