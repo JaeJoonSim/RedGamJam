@@ -275,9 +275,8 @@ namespace BlueRiver.Character
 
         public void ApplySnowStormEffect(float pushSpeed, float jumpPushSpeed, float damage)
         {
-            if (isSheltered) return;
-
-            inSnowStorm = true;
+            if (isSheltered || !inSnowStorm) return;
+            
             if (!isResistSnowStorm)
             {
                 float appliedPushSpeed = !grounded ? jumpPushSpeed : pushSpeed;
@@ -285,7 +284,8 @@ namespace BlueRiver.Character
                 rigid2d.AddForce(new Vector2(-appliedPushSpeed, 0), ForceMode2D.Force);
             }
             Debug.LogError("Player is pushed by the snowstorm.");
-            tree.StartRecoverLoop(-damage * Time.deltaTime);
+            if (tree != null)
+                tree.StartRecoverLoop(-damage * Time.deltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -324,6 +324,11 @@ namespace BlueRiver.Character
                 isSheltered = false;
                 Debug.Log("Player left the shelter.");
             }
+        }
+
+        public void SetInSnowStorm(bool value)
+        {
+            inSnowStorm = value;
         }
 
         private bool IsCollisionAreaAboveThreshold(Collider2D collision, float threshold)

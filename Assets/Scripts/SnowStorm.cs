@@ -119,7 +119,7 @@ namespace BlueRiver
 
         private bool PlayerInSnowStorm(Transform player)
         {
-            // 여기에 눈보라 범위 내에 있는지 확인하는 로직을 추가하세요 (예: 범위 내 트리거 등)
+            
             return stormArea.bounds.Contains(player.position);
         }
 
