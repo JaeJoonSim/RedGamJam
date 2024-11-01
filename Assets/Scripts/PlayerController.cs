@@ -21,6 +21,8 @@ namespace BlueRiver.Character
         private bool itemUsed = false;
         private bool isSheltered = false;
         private bool ignoreWeightPenalty = false;
+        private bool inSnowStorm = false;
+        private bool isResistSnowStorm = false;
 
         [SerializeField] private Tree tree;
 
@@ -174,6 +176,8 @@ namespace BlueRiver.Character
 
                 if (tree == null || ignoreWeightPenalty)
                     speed = stats.MaxSpeed;
+                else if (inSnowStorm && !isResistSnowStorm)
+                    speed = stats.InSnowStormMoveSpeed;
                 else
                     speed = tree.GetWeight();
 
@@ -221,7 +225,7 @@ namespace BlueRiver.Character
                     RecoverTemperature();
                     break;
                 case StartItemType.BlizzardResist:
-                    ResistBlizzard();
+                    ResistSnowStorm();
                     break;
                 case StartItemType.NoWeightPenalty:
                     IgnoreWeightPenalty();
@@ -243,14 +247,14 @@ namespace BlueRiver.Character
             tree.StartRecoverLoop(stats.RecoverTemperature);
         }
 
-        private void ResistBlizzard()
+        private void ResistSnowStorm()
         {
-            Debug.Log("Blizzard resistance: No backward push or speed reduction");
+            isResistSnowStorm = true;
         }
 
         private void IgnoreWeightPenalty()
         {
-            
+            ignoreWeightPenalty = true;
         }
 
         #endregion
@@ -261,9 +265,13 @@ namespace BlueRiver.Character
         {
             if (isSheltered) return;
 
-            float appliedPushSpeed = !grounded ? jumpPushSpeed : pushSpeed;
+            inSnowStorm = true;
+            if (!isResistSnowStorm)
+            {
+                float appliedPushSpeed = !grounded ? jumpPushSpeed : pushSpeed;
 
-            rigid2d.AddForce(new Vector2(-appliedPushSpeed, 0), ForceMode2D.Force);
+                rigid2d.AddForce(new Vector2(-appliedPushSpeed, 0), ForceMode2D.Force);
+            }
             Debug.LogError("Player is pushed by the snowstorm.");
             tree.StartRecoverLoop(-damage * Time.deltaTime);
         }
@@ -287,6 +295,11 @@ namespace BlueRiver.Character
         }
 
         #endregion
+
+        public bool GetIsResistSnowStorm()
+        {
+            return isResistSnowStorm;
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
