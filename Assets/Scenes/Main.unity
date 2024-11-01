@@ -1550,8 +1550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4077b86b1a15be4ebb1c8a4e06ca559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultMaxTemperature: 40
-  Percent: 5
+  MaxTemperature: 0
+  ReducePercent: 0
   DecreaseMaxTemperature: 3
 --- !u!1 &1275454873 stripped
 GameObject:
@@ -1625,8 +1625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4077b86b1a15be4ebb1c8a4e06ca559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultMaxTemperature: 60
-  Percent: 10
+  MaxTemperature: 0
+  ReducePercent: 0
   DecreaseMaxTemperature: 7
 --- !u!1 &1342504341
 GameObject:
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 1d535473f9550ad41ae609041c438f24, type: 2}
-  tree: {fileID: 1547450966}
+  tree: {fileID: 0}
 --- !u!70 &1505529549
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1856,8 +1856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4077b86b1a15be4ebb1c8a4e06ca559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultMaxTemperature: 100
-  Percent: 10
+  MaxTemperature: 0
+  ReducePercent: 0
   DecreaseMaxTemperature: 5
 --- !u!1 &1827961289
 GameObject:

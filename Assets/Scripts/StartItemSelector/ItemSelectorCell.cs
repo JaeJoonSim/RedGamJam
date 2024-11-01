@@ -19,6 +19,8 @@ namespace BlueRiver.Items
             selectButton = Utils.Utils.FindChild<Button>(gameObject, "Button");
 
             selectButton.onClick.AddListener(OnClick);
+
+            selectButton.gameObject.SetActive(false);
         }
 
         public void SetItem(StartItemType itemType)
