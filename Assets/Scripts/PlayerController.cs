@@ -17,8 +17,11 @@ namespace BlueRiver.Character
         private Vector2 frameVelocity;
         private bool cachedQueryStartInColliders;
 
+        [SerializeField] private Transform treeArea;
         private StartItemType selectedItem;
+        private TreeItemType selectedTree;
         private bool itemUsed = false;
+        private bool treeSelect = false;
         private bool isSheltered = false;
         private bool ignoreWeightPenalty = false;
         private bool inSnowStorm = false;
@@ -212,6 +215,15 @@ namespace BlueRiver.Character
         {
             selectedItem = item;
             itemUsed = false;
+        }
+
+        public void SelectTree(Tree tree)
+        {
+            if (!treeSelect)
+            {
+                this.tree = Instantiate(tree, treeArea);
+                treeSelect = true;
+            }
         }
 
         public void UseItemEffect()
