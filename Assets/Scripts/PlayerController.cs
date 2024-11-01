@@ -292,8 +292,28 @@ namespace BlueRiver.Character
         {
             if (collision.CompareTag("Shelter"))
             {
-                isSheltered = true;
-                Debug.Log("Player is sheltered from the blizzard.");
+                if (IsCollisionAreaAboveThreshold(collision, stats.ShelterThreshold))
+                {
+                    isSheltered = true;
+                    Debug.Log("Player is sheltered from the blizzard.");
+                }
+            }
+        }
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Shelter"))
+            {
+                if (IsCollisionAreaAboveThreshold(collision, stats.ShelterThreshold))
+                {
+                    isSheltered = true;
+                    Debug.Log("Player is sheltered from the blizzard.");
+                }
+                else
+                {
+                    isSheltered = false;
+                    Debug.Log("Player left the shelter.");
+                }
             }
         }
 
@@ -306,8 +326,47 @@ namespace BlueRiver.Character
             }
         }
 
+        private bool IsCollisionAreaAboveThreshold(Collider2D collision, float threshold)
+        {
+            Bounds playerBounds = GetComponent<Collider2D>().bounds;
+            Bounds shelterBounds = collision.bounds;
+
+            if (playerBounds.Intersects(shelterBounds))
+            {
+                Bounds intersectionBounds = GetIntersectionBounds(playerBounds, shelterBounds);
+                float intersectionArea = intersectionBounds.size.x * intersectionBounds.size.y;
+                float playerArea = playerBounds.size.x * playerBounds.size.y;
+
+                return (intersectionArea / playerArea) >= threshold;
+            }
+
+            return false;
+        }
+
+        private Bounds GetIntersectionBounds(Bounds a, Bounds b)
+        {
+            Vector3 min = Vector3.Max(a.min, b.min);
+            Vector3 max = Vector3.Min(a.max, b.max);
+
+            if (min.x > max.x || min.y > max.y)
+            {
+                return new Bounds();
+            }
+
+            return new Bounds((min + max) / 2, max - min);
+        }
+
         #endregion
 
+        #region Shelter
+
+        public void RecoverTemperatureByShelter()
+        {
+            if (tree != null)
+                tree.RecoverByMaxTemperature();
+        }
+
+        #endregion
         public bool GetIsResistSnowStorm()
         {
             return isResistSnowStorm;

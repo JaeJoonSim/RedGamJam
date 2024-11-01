@@ -13,6 +13,8 @@ namespace BlueRiver.Character
         [Header("INPUT")]
         public bool SnapInput = true;
 
+        public float ShelterThreshold = 0.5f;
+
         [Range(0.01f, 0.99f)]
         public float VerticalDeadZoneThreshold = 0.3f;
 
