@@ -20,6 +20,8 @@ namespace BlueRiver.Character
         private StartItemType selectedItem;
         private bool itemUsed = false;
 
+        [SerializeField] private Temperature tree;
+
         #region Interface
 
         public Vector2 FrameInput => frameInput.Move;
@@ -204,7 +206,7 @@ namespace BlueRiver.Character
             switch (selectedItem)
             {
                 case StartItemType.Lighter:
-                    UseLighter();
+                    StartCoroutine(UseLighter());
                     break;
                 case StartItemType.TemperatureRecovery:
                     RecoverTemperature();
@@ -218,9 +220,13 @@ namespace BlueRiver.Character
             }
         }
 
-        private void UseLighter()
+        private IEnumerator UseLighter()
         {
-            Debug.Log("Using Lighter: Stop temperature gauge for n seconds");
+            tree.SetPause(true);
+
+            yield return new WaitForSeconds(3);
+
+            tree.SetPause(false);
         }
 
         private void RecoverTemperature()
