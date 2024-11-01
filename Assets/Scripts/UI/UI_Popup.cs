@@ -9,9 +9,23 @@ namespace BlueRiver.UI
     {
         public virtual void Init()
         {
-            
+            PopupManager.SetCanvas(gameObject, true);
         }
 
-        
+        public virtual void ClosePopup()
+        {
+            PopupManager.ClosePopup(this);
+        }
+
+        private void OnEnable()
+        {
+            Init();
+        }
+
+        private void OnDestroy()
+        {
+            if (this != null)
+                PopupManager.ClosePopup(this);
+        }
     }
 }
