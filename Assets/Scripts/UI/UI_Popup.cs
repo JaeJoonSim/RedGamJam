@@ -7,22 +7,21 @@ namespace BlueRiver.UI
 {
     public class UI_Popup : UI_Base
     {
-        public virtual void Init()
+        protected virtual void Init()
         {
-            PopupManager.SetCanvas(gameObject, true);
         }
 
-        public virtual void ClosePopup()
+        protected virtual void ClosePopup()
         {
             PopupManager.ClosePopup(this);
         }
-
-        private void OnEnable()
+        
+        protected virtual void OnEnable()
         {
             Init();
         }
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             if (this != null)
                 PopupManager.ClosePopup(this);
