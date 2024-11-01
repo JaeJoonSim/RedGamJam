@@ -24,6 +24,7 @@ public class Temperature : MonoBehaviour
     private float PrevTemperature;
 
     private bool IsPause;
+    private float DefaultDamage;
 
     private void Start()
     {
@@ -37,16 +38,22 @@ public class Temperature : MonoBehaviour
         IsPause = _value;
     }
 
+    //데미지 값 Set
+    public void SetDefaultDamage(float _damage)
+    {
+        DefaultDamage = _damage;
+    }
+
     //온도 변동 값 Set
     public void SetValue(float _value)
     {
-        Value += _value;
+        Value += (_value - DefaultDamage);
     }
 
     //최대 온도 값 Set
     public void SetMaxTemperature(float _value)
     {
-        MaxTemperature += _value;
+        MaxTemperature = Mathf.Clamp(MaxTemperature + _value, 0, DefaultMaxTemperature);
     }
 
     //온도 변동 값 Get

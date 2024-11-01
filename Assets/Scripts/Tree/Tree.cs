@@ -8,6 +8,8 @@ public class Tree : MonoBehaviour
 {
     //무게
     [SerializeField]float Weight;
+    //데미지
+    [SerializeField]float Damage;
 
     //온도
     Temperature TreeTemperature;    
@@ -15,6 +17,7 @@ public class Tree : MonoBehaviour
     private void Awake()
     {
         TreeTemperature = GetComponent<Temperature>();
+        TreeTemperature.SetDefaultDamage(Damage);
     }
 
     //무게 Get
