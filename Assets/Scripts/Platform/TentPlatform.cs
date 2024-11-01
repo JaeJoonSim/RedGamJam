@@ -6,12 +6,12 @@ public class TentPlatform : DefaultPlatform
 {
     protected override void BeginEvent()
     {
-        MyCuteTree.PauseDamageTime(true);
-        MyCuteTree.RecoverByMaxTemperature();
+        player.GetTree().PauseDamageTime(true);
+        player.GetTree().RecoverByMaxTemperature();
     }
 
     protected override void EndEvent()
     {
-        MyCuteTree.PauseDamageTime(false);
+        player.GetTree().PauseDamageTime(false);
     }
 }

@@ -1,27 +1,32 @@
+using BlueRiver;
+using BlueRiver.Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DefaultPlatform : MonoBehaviour
 {
-    [SerializeField] protected float FallingSpeed;
+    protected PlayerController player;
     [SerializeField] bool CanFalling;
 
-    protected Tree MyCuteTree;
-
     private bool IsFalling;
+
+    private void Start()
+    {
+        player = GameManager.Instance.player;
+    }
 
     protected virtual void Update()
     {
         if(IsFalling && CanFalling)
         {
-            transform.position -= new Vector3(0.0f, FallingSpeed * Time.deltaTime, 0.0f);
+            transform.position -= new Vector3(0.0f, player.stats.MaxFallSpeed * Time.deltaTime, 0.0f);
         }        
     }
 
     protected virtual void BeginEvent()
     {
-        MyCuteTree.PauseDamageTime(false);
+        player.GetTree().PauseDamageTime(false);
     }
 
     protected virtual void EndEvent()
@@ -31,8 +36,7 @@ public class DefaultPlatform : MonoBehaviour
 
     void OnTriggerEnter(Collider _other)
     {
-        MyCuteTree = _other.GetComponent<Tree>();
-        if (MyCuteTree != null)
+        if (_other.CompareTag("Player"))
         {
             BeginEvent();
         }        
@@ -40,7 +44,7 @@ public class DefaultPlatform : MonoBehaviour
 
     void OnTriggerExit(Collider _other)
     {
-        if (MyCuteTree != null)
+        if (_other.CompareTag("Player"))
         {
             EndEvent();
         }

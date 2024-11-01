@@ -10,7 +10,7 @@ namespace BlueRiver.Character
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController
     {
-        [SerializeField] private PlayerStats stats;
+        public PlayerStats stats;
         private Rigidbody2D rigid2d;
         private CapsuleCollider2D col;
         private FrameInput frameInput;
@@ -217,6 +217,11 @@ namespace BlueRiver.Character
         {
             selectedItem = item;
             itemUsed = false;
+        }
+
+        public Tree GetTree()
+        {
+            return tree;
         }
 
         public void SelectTree(Tree tree)

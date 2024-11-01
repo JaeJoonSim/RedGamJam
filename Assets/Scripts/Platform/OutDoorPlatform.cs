@@ -10,12 +10,12 @@ public class OutDoorPlatform : DefaultPlatform
     protected override void BeginEvent()
     {
         base.BeginEvent();
-        MyCuteTree.SetOutDoor(true);
-        MyCuteTree.SetReduceDamagePercent(ReduceDamagePercent);
+        player.GetTree().SetOutDoor(true);
+        player.GetTree().SetReduceDamagePercent(ReduceDamagePercent);
     }
 
     protected override void EndEvent()
     {
-        MyCuteTree.SetOutDoor(false);
+        player.GetTree().SetOutDoor(false);
     }
 }
