@@ -48,5 +48,10 @@ namespace BlueRiver.Character
         public float CoyoteTime = .15f;
 
         public float JumpBuffer = .2f;
+
+        [Header("ITEMS")]
+        public float LighterTime = 3f;
+
+        public float RecoverTemperature = 30f;
     }
 }

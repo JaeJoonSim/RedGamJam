@@ -689,7 +689,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1355,6 +1355,7 @@ MonoBehaviour:
   DefaultMaxTemperature: 40
   Percent: 5
   DecreaseMaxTemperature: 3
+  CurrentTemperature: 0
 --- !u!1 &1289633830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1403,7 @@ MonoBehaviour:
   DefaultMaxTemperature: 60
   Percent: 10
   DecreaseMaxTemperature: 7
+  CurrentTemperature: 0
 --- !u!1 &1342504341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,7 +1488,6 @@ GameObject:
   - component: {fileID: 1505529545}
   - component: {fileID: 1505529548}
   - component: {fileID: 1505529549}
-  - component: {fileID: 1505529550}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1585,21 +1586,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.4, y: 0.7}
   m_Direction: 0
---- !u!114 &1505529550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505529544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4077b86b1a15be4ebb1c8a4e06ca559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultMaxTemperature: 100
-  Percent: 10
-  DecreaseMaxTemperature: 5
 --- !u!1 &1547450964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1633,7 @@ MonoBehaviour:
   DefaultMaxTemperature: 100
   Percent: 10
   DecreaseMaxTemperature: 5
+  CurrentTemperature: 0
 --- !u!1 &1827961289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,7 +1680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChangeTime: 0
   TemperatureList:
-  - {fileID: 1505529550}
+  - {fileID: 0}
   - {fileID: 1547450966}
   - {fileID: 1289633832}
   - {fileID: 1146106895}

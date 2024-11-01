@@ -224,14 +224,14 @@ namespace BlueRiver.Character
         {
             tree.SetPause(true);
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(stats.LighterTime);
 
             tree.SetPause(false);
         }
 
         private void RecoverTemperature()
         {
-            Debug.Log("Recovering temperature: One-time use");
+            tree.SetValue(stats.RecoverTemperature);
         }
 
         private void ResistBlizzard()
@@ -241,7 +241,7 @@ namespace BlueRiver.Character
 
         private void IgnoreWeightPenalty()
         {
-            Debug.Log("Ignoring weight penalty: Temperature recovery not possible");
+            tree.GetComponent<Tree>().SetWeight(0);
         }
 
         #endregion

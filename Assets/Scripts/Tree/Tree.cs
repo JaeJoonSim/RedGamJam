@@ -26,6 +26,11 @@ public class Tree : MonoBehaviour
         return Weight;
     }
 
+    public float SetWeight(float weight)
+    {
+        return weight;
+    }
+
     //온도 Get
     public float GetTemprature()
     {
