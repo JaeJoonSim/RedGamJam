@@ -14,7 +14,7 @@ namespace BlueRiver
             {
                 var player = GameManager.Instance.player;
 
-                if (player != null)
+                if (player != null && player.IsMovingTowardsShelter(transform.position))
                 {
                     player.RecoverTemperatureByShelter();
                     isEntered = true;
@@ -23,5 +23,18 @@ namespace BlueRiver
             }
         }
 
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                var player = GameManager.Instance.player;
+
+                if (player != null && player.IsMovingAwayFromShelter(transform.position))
+                {
+                    player.LeaveShelter();
+                    Debug.Log("Player left the shelter");
+                }
+            }
+        }
     }
 }
