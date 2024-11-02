@@ -128,7 +128,7 @@ namespace BlueRiver.Character
                 anim.transform.localScale = new Vector3(1, 1);
             anim.SetBool("IsSlip", inSnowStorm);
 
-            if (inSnowStorm && particleController.SearchParticle("SlipEffect").isPlaying == false)
+            if (inSnowStorm && particleController.SearchParticle("SlipEffect").isPlaying == false && frameVelocity.x == 0)
                 particleController.PlayParticle("SlipEffect");
             else if (inSnowStorm && frameVelocity.x != 0 || !inSnowStorm)
                 particleController.StopParticle("SlipEffect");
@@ -431,7 +431,7 @@ namespace BlueRiver.Character
                 if (snowStormCoroutine != null)
                     StopCoroutine(snowStormCoroutine);
 
-                snowStormCoroutine = StartCoroutine(ResetInSnowStormAfterDelay(0.5f));
+                snowStormCoroutine = StartCoroutine(ResetInSnowStormAfterDelay(0.1f));
             }
         }
 
