@@ -951,6 +951,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6769154935036252972, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769154935036252972, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769154935036252972, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769154935036252972, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.505
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1663,6 +1679,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2755209786440736836, guid: 3cf6ce8c1b3c6a849898143eb7bc7d92, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6138796526411691574, guid: 3cf6ce8c1b3c6a849898143eb7bc7d92, type: 3}
       propertyPath: m_Name
       value: SlipEffect
@@ -2006,9 +2026,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8302624154976884636, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
+      propertyPath: startAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8386694607245670194, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
