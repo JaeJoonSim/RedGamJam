@@ -6232,6 +6232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 1d535473f9550ad41ae609041c438f24, type: 2}
   treeArea: {fileID: 0}
+  anim: {fileID: 0}
   tree: {fileID: 0}
 --- !u!70 &1505529549
 CapsuleCollider2D:
@@ -6846,11 +6847,72 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlipEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 6138796526411691574, guid: 3cf6ce8c1b3c6a849898143eb7bc7d92, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cf6ce8c1b3c6a849898143eb7bc7d92, type: 3}
+--- !u!1001 &6690949743916748673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.57749534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722799107798695601, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034215523703904854, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
+      propertyPath: m_Name
+      value: LandEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3dc45bb30bb72984fb3d371964d471c0, type: 3}
 --- !u!1001 &8066284780985391235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7149,3 +7211,4 @@ SceneRoots:
   - {fileID: 8066284780985391235}
   - {fileID: 334676097}
   - {fileID: 4496334300687839955}
+  - {fileID: 6690949743916748673}
