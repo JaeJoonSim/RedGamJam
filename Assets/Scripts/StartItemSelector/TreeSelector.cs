@@ -31,6 +31,9 @@ namespace BlueRiver.Items
 
             for (int i = 0; i < cellCount; i++)
             {
+                if (GameManager.Instance.SelectedTreeList.Contains((TreeItemType)i + 1))
+                    continue;
+                
                 GameObject go = Instantiate(selectorCell, cellArea);
                 go.name = $"Item Select Cell_{i}";
 
@@ -50,6 +53,7 @@ namespace BlueRiver.Items
                 var tree = TreeItemIcon.Instance.SearchTree(treeType);
                 Debug.Log($"Selected tree: {treeType}");
                 player.SelectTree(tree);
+                GameManager.Instance.SelectedTreeList.Add(treeType);
                 currentSelectionCount++;
 
                 if (currentSelectionCount == maxSelectionCount)

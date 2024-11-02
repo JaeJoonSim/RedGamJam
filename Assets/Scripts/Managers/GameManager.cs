@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.SimpleLocalization;
 using Assets.SimpleLocalization.Scripts;
+using BlueRiver.Items;
 
 namespace BlueRiver
 {
@@ -15,6 +16,8 @@ namespace BlueRiver
 
         private ParticleSystem snowStormEffect;
         private bool canClickEscape = true;
+
+        public List<TreeItemType> SelectedTreeList = new List<TreeItemType>();
 
         protected override void Awake()
         {
