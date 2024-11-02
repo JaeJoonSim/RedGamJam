@@ -50,7 +50,7 @@ Material:
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 10
-    - _FogSize: 1.5
+    - _FogSize: 0.8
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
