@@ -33,7 +33,16 @@ namespace BlueRiver.Character
             return ps?.particle;
         }
 
-        public void playParticle(string name)
+        public void StopParticle(string name)
+        {
+            var ps = particles.FirstOrDefault(p => p.name == name);
+
+            if (ps == null) return;
+
+            ps.particle.Stop();
+        }
+
+        public void PlayParticle(string name)
         {
             var ps = particles.FirstOrDefault(particles => particles.name == name);
 

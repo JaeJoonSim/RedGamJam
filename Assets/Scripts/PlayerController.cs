@@ -129,7 +129,10 @@ namespace BlueRiver.Character
             anim.SetBool("IsSlip", inSnowStorm);
 
             if (inSnowStorm && particleController.SearchParticle("SlipEffect").isPlaying == false)
-                particleController.playParticle("SlipEffect");
+                particleController.PlayParticle("SlipEffect");
+            else if (inSnowStorm && frameVelocity.x != 0 || !inSnowStorm)
+                particleController.StopParticle("SlipEffect");
+
         }
 
         #region Collisions
@@ -155,7 +158,7 @@ namespace BlueRiver.Character
                 GroundedChanged?.Invoke(true, Mathf.Abs(frameVelocity.y));
 
                 anim.SetTrigger("IsLanding");
-                particleController.playParticle("LandEffect");
+                particleController.PlayParticle("LandEffect");
             }
             else if (grounded && !groundHit)
             {
@@ -194,6 +197,9 @@ namespace BlueRiver.Character
 
         private void ExecuteJump()
         {
+            if (particleController.SearchParticle("SlipEffect").isPlaying)
+                particleController.StopParticle("SlipEffect");
+            
             _endedJumpEarly = false;
             _timeJumpWasPressed = 0;
             _bufferedJumpUsable = false;
