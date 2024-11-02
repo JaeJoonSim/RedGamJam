@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace BlueRiver.UI
@@ -54,12 +55,13 @@ namespace BlueRiver.UI
 
         private void OnClickSettingsButton()
         {
-
+            PopupManager.ClosePopup();
+            PopupManager.ShowPopup<UI_Popup>("Popup Settings");
         }
 
         private void OnClickRestartButton()
         {
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         private void OnClickMainMenuButton()
