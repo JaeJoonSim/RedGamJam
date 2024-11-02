@@ -15,6 +15,7 @@ namespace BlueRiver
         public PlayerController player;
         public PopupPause popupPause;
         public bool playerDeath = false;
+        public bool playerIgnoreSnowStorm = false;
 
         private ParticleSystem snowStormEffect;
         private bool canClickEscape = true;

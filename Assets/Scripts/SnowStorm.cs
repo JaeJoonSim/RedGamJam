@@ -36,6 +36,11 @@ namespace BlueRiver
             StartCoroutine(SnowStormOneCycle());
         }
 
+        public void SnowStormShot()
+        {
+            StartCoroutine(SnowStormCycle());
+        }
+
         private IEnumerator SnowStormOneCycle()
         {
             snowStormParticle.Play();
@@ -65,7 +70,7 @@ namespace BlueRiver
             Debug.Log("Snowstorm started!");
         }
 
-        private void StopSnowStorm()
+        public void StopSnowStorm()
         {
             isBlizzardActive = false;
             snowStormParticle.Stop();
