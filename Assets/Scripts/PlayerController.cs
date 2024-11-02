@@ -27,6 +27,12 @@ namespace BlueRiver.Character
         private bool inSnowStorm = false;
         private bool isResistSnowStorm = false;
 
+        private bool isLighterActive = false;
+
+        private float lighterRemainingTime;
+
+        private Coroutine lighterCoroutine;
+
         private Coroutine snowStormCoroutine = null;
 
         [SerializeField] private Tree tree;
@@ -49,7 +55,12 @@ namespace BlueRiver.Character
             col = GetComponent<CapsuleCollider2D>();
 
             cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
-            PopupManager.ShowPopup<UI_Popup>("Tree Selector");
+            PopupManager.ShowPopup<UI_Popup>("Item Selector");
+        }
+
+        private void Start()
+        {
+            lighterRemainingTime = stats.LighterTime;
         }
 
         private void Update()
@@ -81,8 +92,13 @@ namespace BlueRiver.Character
 
             if (Input.GetKeyDown(KeyCode.C) && !itemUsed)
             {
-                UseItemEffect();
-                itemUsed = true;
+                UseItemEffect(true);
+                
+            }
+
+            if (Input.GetKeyUp(KeyCode.C))
+            {
+                UseItemEffect(false);
             }
         }
 
@@ -182,7 +198,7 @@ namespace BlueRiver.Character
                 if (tree == null || ignoreWeightPenalty)
                     speed = stats.MaxSpeed;
                 else if (inSnowStorm && !isResistSnowStorm)
-                    speed = stats.InSnowStormMoveSpeed;
+                    speed = stats.MaxSpeed - stats.InSnowStormMoveSpeed;
                 else
                     speed = tree.GetWeight();
 
@@ -233,12 +249,23 @@ namespace BlueRiver.Character
             }
         }
 
-        public void UseItemEffect()
+        public void UseItemEffect(bool isHolding)
         {
+            if (lighterCoroutine != null)
+            {
+                isLighterActive = false;
+                StopCoroutine(lighterCoroutine);
+            }
+
+            if (!isHolding) return;
+
+            if (selectedItem != StartItemType.Lighter)
+                itemUsed = true;
+
             switch (selectedItem)
             {
                 case StartItemType.Lighter:
-                    StartCoroutine(UseLighter());
+                    HoldLighter(isHolding);
                     break;
                 case StartItemType.TemperatureRecovery:
                     RecoverTemperature();
@@ -252,13 +279,45 @@ namespace BlueRiver.Character
             }
         }
 
+        private void HoldLighter(bool isHolding)
+        {
+            if (isHolding && lighterRemainingTime > 0 && !isLighterActive)
+            {
+                isLighterActive = true;
+                lighterCoroutine = StartCoroutine(UseLighter());
+                Debug.Log("Lighter activated");
+            }
+            else if (!isHolding && isLighterActive)
+            {
+                if (lighterCoroutine != null)
+                {
+                    StopCoroutine(lighterCoroutine);
+                }
+
+                if (tree != null)
+                    tree.PauseDamageTime(false);
+                isLighterActive = false;
+                Debug.Log("Lighter deactivated");
+            }
+        }
+
         private IEnumerator UseLighter()
         {
-            tree.PauseDamageTime(true);
+            if (tree != null)
+                tree.PauseDamageTime(true);
 
-            yield return new WaitForSeconds(stats.LighterTime);
+            float startTime = Time.time;
+            while (lighterRemainingTime > 0 && isLighterActive)
+            {
+                yield return null;
+                lighterRemainingTime -= Time.time - startTime;
+                startTime = Time.time;
+            }
 
-            tree.PauseDamageTime(false);
+            if (tree != null)
+                tree.PauseDamageTime(false);
+            isLighterActive = false;
+            Debug.Log("Lighter effect ended");
         }
 
         private void RecoverTemperature()
