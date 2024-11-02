@@ -45,7 +45,8 @@ public class Tree : MonoBehaviour
     public void PauseDamageTime(bool _value)
     {
         //퍼즈
-        TreeTemperature.SetPause(_value);
+        if (TreeTemperature != null)
+            TreeTemperature.SetPause(_value);
     }
 
     //데미지 루프 시작
