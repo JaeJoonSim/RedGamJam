@@ -9,9 +9,10 @@ namespace BlueRiver
     public class GameManager : MonoSingleton<GameManager>
     {
         public PlayerController player;
+        public PopupPause popupPause;
 
         private bool canClickEscape = true;
-
+        
         private void Update()
         {
             OnClickEscape();
@@ -24,10 +25,17 @@ namespace BlueRiver
             else
                 Time.timeScale = 1;
 
-            if (!canClickEscape) return;
-
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                if (!canClickEscape)
+                {
+                    if (popupPause == null)
+                        PopupManager.ShowPopup<UI_Popup>("Popup Pause");
+                    else
+                        PopupManager.ClosePopup(popupPause);
+                    return;
+                }
+
                 if (PopupManager.GetPopupCount() <= 0)
                     PopupManager.ShowPopup<UI_Popup>("Popup Pause");
                 else

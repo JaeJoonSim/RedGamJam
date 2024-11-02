@@ -27,6 +27,8 @@ namespace BlueRiver.Items
         {
             player = GameManager.Instance.player;
 
+            GameManager.Instance.SetClickEscape(false);
+
             for (int i = 0; i < cellCount; i++)
             {
                 GameObject go = Instantiate(selectorCell, cellArea);

@@ -9,7 +9,7 @@ namespace BlueRiver.UI
     {
         private static int _order = 10;
 
-        static Stack<UI_Popup> _popupStack = new Stack<UI_Popup>();
+        static public Stack<UI_Popup> _popupStack = new Stack<UI_Popup>();
         static UI_Scene _sceneUI = null;
 
         public static GameObject Root

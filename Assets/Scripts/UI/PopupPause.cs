@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,25 @@ namespace BlueRiver.UI
             settingsButton.onClick.AddListener(OnClickSettingsButton);
             restartButton.onClick.AddListener(OnClickRestartButton);
             mainMenuButton.onClick.AddListener(OnClickMainMenuButton);
+
+            GameManager.Instance.popupPause = this;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            if (GameManager.Instance != null)
+                GameManager.Instance.popupPause = null;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (PopupManager._popupStack.Last() == this)
+                    ClosePopup();
+            }
         }
 
         private void OnClickBackButton()
