@@ -27,15 +27,6 @@ namespace BlueRiver
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (!canClickEscape)
-                {
-                    if (popupPause == null)
-                        PopupManager.ShowPopup<UI_Popup>("Popup Pause");
-                    else
-                        PopupManager.ClosePopup(popupPause);
-                    return;
-                }
-
                 if (PopupManager.GetPopupCount() <= 0)
                     PopupManager.ShowPopup<UI_Popup>("Popup Pause");
                 else
