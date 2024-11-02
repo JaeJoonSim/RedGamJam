@@ -22,7 +22,11 @@ public class MovingPlatform : DefaultPlatform
     private void Awake()
     {
         if (positionA == null || positionB == null)
+        {
+            Debug.LogError("Positions A and B must be assigned.");
             enabled = false;
+            return;
+        }
 
         targetPoint = positionB;
     }
@@ -58,11 +62,17 @@ public class MovingPlatform : DefaultPlatform
 
     protected override void BeginEvent()
     {
-        player.transform.SetParent(transform);
+        if (player != null)
+        {
+            player.transform.SetParent(transform);
+        }
     }
 
     protected override void EndEvent()
     {
-        player.transform.SetParent(null);
+        if (player != null)
+        {
+            player.transform.SetParent(null);
+        }
     }
 }
