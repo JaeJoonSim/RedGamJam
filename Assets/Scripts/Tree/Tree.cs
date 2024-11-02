@@ -33,6 +33,7 @@ public class Tree : MonoBehaviour
     private void Awake()
     {
         TreeTemperature = GetComponent<Temperature>();
+        StartDamageLoop();
     }
 
     public float GetWeight()
@@ -50,7 +51,7 @@ public class Tree : MonoBehaviour
     //데미지 루프 시작
     public void StartDamageLoop()
     {
-        StartCoroutine(DamageLoop());
+        CurrentCoroutine = StartCoroutine(DamageLoop());
     }
 
     //데미지 루프 끝
@@ -62,7 +63,7 @@ public class Tree : MonoBehaviour
     //힐 루프 시작
     public void StartRecoverLoop(float _maxTime)
     {
-        StartCoroutine(RecoverLoop(_maxTime));
+        CurrentCoroutine2 = StartCoroutine(RecoverLoop(_maxTime));
     }
 
     public void SetOutDoor(bool _value)
@@ -73,7 +74,7 @@ public class Tree : MonoBehaviour
     //온도 감소 루프
     IEnumerator DamageLoop()
     {
-        yield return new WaitForSeconds(DamageTime);
+        yield return new WaitForSecondsRealtime(DamageTime);
 
         if(OutDoor)
         {
@@ -95,7 +96,7 @@ public class Tree : MonoBehaviour
     {
         float Count = _maxTime;
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSecondsRealtime(1.0f);
 
         RecoverByValue();
 

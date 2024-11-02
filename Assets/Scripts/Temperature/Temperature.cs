@@ -46,10 +46,11 @@ public class Temperature : MonoBehaviour
         }
 
         CurrentTemperature = Mathf.Clamp(CurrentTemperature -= _value, 0, MaxTemperature);
+        Debug.Log("현재 온도" + CurrentTemperature);
 
         int calcValue = 0;
         calcValue = (int)(MaxTemperature * ReducePercent);
-
+        Debug.Log("calcValue" + calcValue);
         if (PrevTemperature - calcValue >= CurrentTemperature)
         {
             PrevTemperature = CurrentTemperature;
@@ -59,6 +60,8 @@ public class Temperature : MonoBehaviour
                 CurrentTemperature = MaxTemperature = 0;
             }
         }
+
+        Debug.Log("최대 온도" + MaxTemperature);
     }
 
     public float GetMaxTemperature()
