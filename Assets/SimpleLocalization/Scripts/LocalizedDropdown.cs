@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.SimpleLocalization.Scripts
@@ -6,7 +7,7 @@ namespace Assets.SimpleLocalization.Scripts
 	/// <summary>
 	/// Localize dropdown component.
 	/// </summary>
-    [RequireComponent(typeof(Dropdown))]
+    [RequireComponent(typeof(TMP_Dropdown))]
     public class LocalizedDropdown : MonoBehaviour
     {
         public string[] LocalizationKeys;
@@ -24,7 +25,7 @@ namespace Assets.SimpleLocalization.Scripts
 
         private void Localize()
         {
-	        var dropdown = GetComponent<Dropdown>();
+	        var dropdown = GetComponent<TMP_Dropdown>();
 
 			for (var i = 0; i < LocalizationKeys.Length; i++)
 	        {

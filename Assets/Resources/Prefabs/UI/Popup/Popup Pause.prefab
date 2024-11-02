@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 3538731498753593181}
   - component: {fileID: 7804236672702397576}
   - component: {fileID: 7638388701962482551}
+  - component: {fileID: 4703424030525353295}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -188,6 +189,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4703424030525353295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2493748755147413369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Popup.Pause.Restart
 --- !u!1 &3427033526495474274
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +213,7 @@ GameObject:
   - component: {fileID: 457194908856185696}
   - component: {fileID: 3603208138342023286}
   - component: {fileID: 6193241768861388606}
+  - component: {fileID: 7476489639156140761}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -322,6 +337,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7476489639156140761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427033526495474274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Popup.Pause.Back
 --- !u!1 &4926260906196536392
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +361,7 @@ GameObject:
   - component: {fileID: 4648931598720849319}
   - component: {fileID: 5110693176113586052}
   - component: {fileID: 6066431120519022778}
+  - component: {fileID: 4903743521470322399}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -456,6 +485,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4903743521470322399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926260906196536392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Popup.Pause.MainMenu
 --- !u!1 &5797873758940989092
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +707,7 @@ GameObject:
   - component: {fileID: 5059449741301090056}
   - component: {fileID: 3692075704553273210}
   - component: {fileID: 4993502873032899086}
+  - component: {fileID: 2060371300923265527}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -788,6 +831,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2060371300923265527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6666557711737390928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Popup.Pause.Settings
 --- !u!1 &6825944437663212683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,6 +1238,7 @@ GameObject:
   - component: {fileID: 4791983909156643312}
   - component: {fileID: 5400407225984898148}
   - component: {fileID: 3301637393838015772}
+  - component: {fileID: 2357917537194035652}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -1305,6 +1362,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2357917537194035652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7519330639274244023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Popup.Pause.Title
 --- !u!1 &7581901255092655702
 GameObject:
   m_ObjectHideFlags: 0
