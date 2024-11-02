@@ -69,7 +69,6 @@ namespace BlueRiver
         {
             isBlizzardActive = false;
             snowStormParticle.Stop();
-            player.SetInSnowStorm(false);
             Debug.Log("Snowstorm ended!");
         }
 
