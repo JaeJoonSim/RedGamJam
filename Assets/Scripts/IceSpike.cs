@@ -26,7 +26,6 @@ public class IceSpike : MonoBehaviour
             {
                 if (player.GetTree() != null)
                     player.GetTree().TakeDamage();
-                Debug.LogError("123");
             }
         }
     }
