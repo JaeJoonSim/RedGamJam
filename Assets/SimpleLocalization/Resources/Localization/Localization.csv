@@ -1,0 +1,15 @@
+Key,Korean,English
+Popup.Pause.Title,일시정지,Pause
+Popup.Pause.Back,뒤로 가기,Back
+Popup.Pause.Settings,설정,Settings
+Popup.Pause.Restart,다시 시작,Restart
+Popup.Pause.MainMenu,메인 메뉴,Main Menu
+Popup.Settings.Language,언어,Language
+Popup.Settings.MasetVolume,전체 볼륨,Master Volume
+Popup.Settings.VFX,SFX,SFX
+Popup.Settings.BGM,BGM,BGM
+Popup.Settings.Back,뒤로 가기,Back
+Popup.Settings.Reset,초기화,Reset
+,,
+ItemSelect.Cell.Select,선택,Select
+TreeSelect.Cell.Select,선택,Select

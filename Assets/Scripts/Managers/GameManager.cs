@@ -3,6 +3,8 @@ using BlueRiver.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.SimpleLocalization;
+using Assets.SimpleLocalization.Scripts;
 
 namespace BlueRiver
 {
@@ -13,7 +15,24 @@ namespace BlueRiver
 
         private ParticleSystem snowStormEffect;
         private bool canClickEscape = true;
-        
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            LocalizationManager.Read();
+
+            switch (Application.systemLanguage)
+            {
+                case SystemLanguage.English:
+                    LocalizationManager.Language = "English";
+                    break;
+                case SystemLanguage.Korean:
+                    LocalizationManager.Language = "Korean";
+                    break;
+            }
+        }
+
         private void Update()
         {
             OnClickEscape();
@@ -33,6 +52,11 @@ namespace BlueRiver
                 else
                     PopupManager.ClosePopup();
             }
+        }
+
+        public void SetLocalization(string localization)
+        {
+            LocalizationManager.Language = localization;
         }
 
         public void AddColliderSnowParticle(Component collider)

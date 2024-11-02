@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
+using Assets.SimpleLocalization.Scripts;
 
 namespace DialogueEditor
 {
@@ -385,7 +386,7 @@ namespace DialogueEditor
         {
             SpeechNode speech = new SpeechNode();
             speech.Name = editableNode.Name;
-            speech.Text = editableNode.Text;
+            speech.Text = LocalizationManager.Localize(editableNode.Text);
             speech.AutomaticallyAdvance = editableNode.AdvanceDialogueAutomatically;
             speech.AutoAdvanceShouldDisplayOption = editableNode.AutoAdvanceShouldDisplayOption;
             speech.TimeUntilAdvance = editableNode.TimeUntilAdvance;
