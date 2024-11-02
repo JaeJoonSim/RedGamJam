@@ -53,6 +53,8 @@ namespace BlueRiver.Character
 
         private float time;
 
+        private bool playerDeath = false;
+
         private void Awake()
         {
             GameManager.Instance.player = this;
@@ -73,6 +75,15 @@ namespace BlueRiver.Character
         {
             time += Time.deltaTime;
             GatherInput();
+
+            if (!playerDeath)
+            {
+                if (tree.GetTemperature() < 0)
+                {
+                    playerDeath = true;
+                    GameManager.Instance.playerDeath = true;
+                }
+            }
         }
 
         private void GatherInput()
