@@ -193,12 +193,12 @@ namespace BlueRiver.Character
 
             if (!_jumpToConsume && !HasBufferedJump) return;
 
-            if (grounded || CanUseCoyote) ExecuteJump();
+            if (grounded || CanUseCoyote) anim.SetTrigger("IsJump");
 
             _jumpToConsume = false;
         }
 
-        private void ExecuteJump()
+        public void ExecuteJump()
         {
             if (particleController.SearchParticle("SlipEffect").isPlaying)
                 particleController.StopParticle("SlipEffect");
