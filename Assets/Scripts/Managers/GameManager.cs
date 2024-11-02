@@ -11,6 +11,7 @@ namespace BlueRiver
         public PlayerController player;
         public PopupPause popupPause;
 
+        private ParticleSystem snowStormEffect;
         private bool canClickEscape = true;
         
         private void Update()
@@ -32,6 +33,21 @@ namespace BlueRiver
                 else
                     PopupManager.ClosePopup();
             }
+        }
+
+        public void AddColliderSnowParticle(Component collider)
+        {
+            snowStormEffect.trigger.AddCollider(collider);
+        }
+
+        public ParticleSystem GetSnowStorm()
+        {
+            return snowStormEffect;
+        }
+
+        public void SetSnowStormEffect(ParticleSystem snowStormEffect)
+        {
+            this.snowStormEffect = snowStormEffect;
         }
 
         public void SetClickEscape(bool value)
