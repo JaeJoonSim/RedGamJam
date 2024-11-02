@@ -116,16 +116,19 @@ namespace BlueRiver.Character
             HandleDirection();
             HandleGravity();
 
-            SetAnimatorParam();
             ApplyMovement();
+            SetAnimatorParam();
         }
 
         private void SetAnimatorParam()
         {
+            anim.SetBool("IsMove", frameInput.Move.x != 0);
+
             if (frameInput.Move.x > 0)
                 anim.transform.localScale = new Vector3(-1, 1);
             else if (frameInput.Move.x < 0)
                 anim.transform.localScale = new Vector3(1, 1);
+            
             anim.SetBool("IsSlip", inSnowStorm);
 
             if (inSnowStorm && particleController.SearchParticle("SlipEffect").isPlaying == false && frameVelocity.x == 0)
@@ -243,12 +246,16 @@ namespace BlueRiver.Character
             if (grounded && frameVelocity.y <= 0f)
             {
                 frameVelocity.y = stats.GroundingForce;
+                anim.SetBool("IsFall", false);
             }
             else
             {
                 var inAirGravity = stats.FallAcceleration;
                 if (_endedJumpEarly && frameVelocity.y > 0) inAirGravity *= stats.JumpEndEarlyGravityModifier;
                 frameVelocity.y = Mathf.MoveTowards(frameVelocity.y, -stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
+
+                if (frameVelocity.y < 0)
+                    anim.SetBool("IsFall", true);
             }
         }
 
