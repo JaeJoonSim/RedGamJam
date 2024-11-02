@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &334676095
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -6030,21 +6030,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 358950644997984161, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3502493065075635102, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5246151416062107763, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.27
+      value: 2.68
       objectReference: {fileID: 0}
     - target: {fileID: 5246151416062107763, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.48
+      value: 4.57
       objectReference: {fileID: 0}
     - target: {fileID: 5246151416062107763, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6081,10 +6073,6 @@ PrefabInstance:
     - target: {fileID: 5778425325177871005, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
       propertyPath: m_Name
       value: SnowFront
-      objectReference: {fileID: 0}
-    - target: {fileID: 5778425325177871005, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6961,7 +6949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386694607245670194, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
