@@ -78,7 +78,7 @@ namespace BlueRiver.Character
 
             if (!playerDeath)
             {
-                if (tree.GetTemperature() < 0)
+                if (tree != null && tree.GetTemperature() < 0)
                 {
                     playerDeath = true;
                     GameManager.Instance.playerDeath = true;
