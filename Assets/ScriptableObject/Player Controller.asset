@@ -19,18 +19,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   SnapInput: 1
+  ShelterThreshold: 0.5
   VerticalDeadZoneThreshold: 0.3
   HorizontalDeadZoneThreshold: 0.1
-  MaxSpeed: 14
+  MaxSpeed: 2.5
+  InSnowStormMoveSpeed: 7
   Acceleration: 120
   GroundDeceleration: 60
   AirDeceleration: 30
   wallSlidingSpeed: 2
   GroundingForce: -1.5
   GrounderDistance: 0.05
-  JumpPower: 36
-  MaxFallSpeed: 40
-  FallAcceleration: 110
+  JumpPower: 18
+  MaxFallSpeed: 20
+  FallAcceleration: 100
   JumpEndEarlyGravityModifier: 3
   CoyoteTime: 0.15
   JumpBuffer: 0.2
