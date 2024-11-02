@@ -61,6 +61,7 @@ namespace BlueRiver
 
         public void AddColliderSnowParticle(Component collider)
         {
+            if (snowStormEffect == null) return;
             snowStormEffect.trigger.AddCollider(collider);
         }
 
