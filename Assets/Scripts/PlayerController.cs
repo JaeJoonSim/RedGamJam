@@ -429,6 +429,23 @@ namespace BlueRiver.Character
             }
         }
 
+        public bool IsMovingTowardsShelter(Vector3 shelterPosition)
+        {
+            Vector2 directionToShelter = (shelterPosition - transform.position).normalized;
+            return Vector2.Dot(frameInput.Move, directionToShelter) > 0.5f;
+        }
+
+        public bool IsMovingAwayFromShelter(Vector3 shelterPosition)
+        {
+            Vector2 directionToShelter = (shelterPosition - transform.position).normalized;
+            return Vector2.Dot(frameInput.Move, directionToShelter) < -0.5f;
+        }
+
+        public void LeaveShelter()
+        {
+            isSheltered = false;
+        }
+
         public void SetInSnowStorm(bool value)
         {
             inSnowStorm = value;
