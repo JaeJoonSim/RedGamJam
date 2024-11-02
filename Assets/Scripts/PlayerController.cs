@@ -30,6 +30,9 @@ namespace BlueRiver.Character
         [SerializeField]
         private Animator anim;
 
+        [SerializeField]
+        private PlayerParticleController particleController;
+
         private bool isLighterActive = false;
 
         private float lighterRemainingTime;
@@ -124,6 +127,9 @@ namespace BlueRiver.Character
             else if (frameInput.Move.x < 0)
                 anim.transform.localScale = new Vector3(1, 1);
             anim.SetBool("IsSlip", inSnowStorm);
+
+            if (inSnowStorm && particleController.SearchParticle("SlipEffect").isPlaying == false)
+                particleController.playParticle("SlipEffect");
         }
 
         #region Collisions
@@ -147,6 +153,9 @@ namespace BlueRiver.Character
                 _bufferedJumpUsable = true;
                 _endedJumpEarly = false;
                 GroundedChanged?.Invoke(true, Mathf.Abs(frameVelocity.y));
+
+                anim.SetTrigger("IsLanding");
+                particleController.playParticle("LandEffect");
             }
             else if (grounded && !groundHit)
             {
