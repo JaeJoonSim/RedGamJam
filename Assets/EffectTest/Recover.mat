@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IcePop 1
+  m_Name: Recover
   m_Shader: {fileID: -6465566751694194690, guid: 37fb9141520c8694a8756fafa6881291, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
