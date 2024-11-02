@@ -10,13 +10,16 @@ namespace BlueRiver
         [SerializeField] private SnowStormStats snowStats;
         [SerializeField] private ParticleSystem snowStormParticle;
         [SerializeField] private PlayerController player;
+        [SerializeField] private bool startAwake = false;
+
 
         private bool isBlizzardActive = false;
         private float blizzardTimer;
 
         private void Start()
         {
-            StartCoroutine(SnowStormCycle());
+            if (startAwake) 
+                StartCoroutine(SnowStormCycle());
         }
 
         private void Update()
@@ -26,6 +29,19 @@ namespace BlueRiver
                 ApplySnowStormEffect();
                 SetParticlePosition();
             }
+        }
+
+        public void SnowStormOneShot()
+        {
+            StartCoroutine(SnowStormOneCycle());
+        }
+
+        private IEnumerator SnowStormOneCycle()
+        {
+            snowStormParticle.Play();
+            StartSnowStorm();
+            yield return new WaitForSeconds(snowStats.Event_Snow_Time);
+            StopSnowStorm();
         }
 
         private IEnumerator SnowStormCycle()

@@ -27,6 +27,9 @@ namespace BlueRiver.Character
         private bool inSnowStorm = false;
         private bool isResistSnowStorm = false;
 
+        [SerializeField]
+        private Animator anim;
+
         private bool isLighterActive = false;
 
         private float lighterRemainingTime;
@@ -93,7 +96,7 @@ namespace BlueRiver.Character
             if (Input.GetKeyDown(KeyCode.C) && !itemUsed)
             {
                 UseItemEffect(true);
-                
+
             }
 
             if (Input.GetKeyUp(KeyCode.C))
@@ -110,7 +113,17 @@ namespace BlueRiver.Character
             HandleDirection();
             HandleGravity();
 
+            SetAnimatorParam();
             ApplyMovement();
+        }
+
+        private void SetAnimatorParam()
+        {
+            if (frameInput.Move.x > 0)
+                anim.transform.localScale = new Vector3(-1, 1);
+            else if (frameInput.Move.x < 0)
+                anim.transform.localScale = new Vector3(1, 1);
+            anim.SetBool("IsSlip", inSnowStorm);
         }
 
         #region Collisions
@@ -342,7 +355,7 @@ namespace BlueRiver.Character
         public void ApplySnowStormEffect(float pushSpeed, float jumpPushSpeed, float damage)
         {
             if (isSheltered || !inSnowStorm) return;
-            
+
             if (!isResistSnowStorm)
             {
                 float appliedPushSpeed = !grounded ? jumpPushSpeed : pushSpeed;
