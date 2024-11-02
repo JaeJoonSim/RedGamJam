@@ -384,7 +384,7 @@ namespace BlueRiver.Character
 
                 rigid2d.AddForce(new Vector2(-appliedPushSpeed, 0), ForceMode2D.Force);
             }
-            Debug.LogError("Player is pushed by the snowstorm.");
+            Debug.Log("Player is pushed by the snowstorm.");
             if (tree != null)
                 tree.StartRecoverLoop(-damage * Time.deltaTime);
         }
