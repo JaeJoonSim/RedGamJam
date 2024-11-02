@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 //나무
+[RequireComponent(typeof(Temperature))]
 public class Tree : MonoBehaviour
 {
     //무게
@@ -146,6 +147,11 @@ public class Tree : MonoBehaviour
     public bool IsDead()
     {
         return TreeTemperature.GetTemperature() == 0;
+    }
+
+    public float GetTemperature()
+    {
+        return TreeTemperature.GetTemperature();
     }
 
     public void SetReduceDamagePercent(float _value)

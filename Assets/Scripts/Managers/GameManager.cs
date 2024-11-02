@@ -6,6 +6,7 @@ using UnityEngine;
 using Assets.SimpleLocalization;
 using Assets.SimpleLocalization.Scripts;
 using BlueRiver.Items;
+using UnityEngine.SceneManagement;
 
 namespace BlueRiver
 {
@@ -13,6 +14,7 @@ namespace BlueRiver
     {
         public PlayerController player;
         public PopupPause popupPause;
+        public bool playerDeath = false;
 
         private ParticleSystem snowStormEffect;
         private bool canClickEscape = true;
@@ -53,7 +55,10 @@ namespace BlueRiver
                 if (PopupManager.GetPopupCount() <= 0)
                     PopupManager.ShowPopup<UI_Popup>("Popup Pause");
                 else
-                    PopupManager.ClosePopup();
+                {
+                    if (playerDeath == false)
+                        PopupManager.ClosePopup();
+                }
             }
         }
 
@@ -81,6 +86,16 @@ namespace BlueRiver
         public void SetClickEscape(bool value)
         {
             canClickEscape = value;
+        }
+
+        public void ChangeScene(string sceneName = null)
+        {
+            playerDeath = false;
+
+            if (string.IsNullOrEmpty(sceneName))
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            else
+                SceneManager.LoadScene(sceneName);
         }
     }
 }

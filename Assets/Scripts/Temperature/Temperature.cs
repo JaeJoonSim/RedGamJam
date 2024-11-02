@@ -1,3 +1,5 @@
+using BlueRiver;
+using BlueRiver.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,6 +61,12 @@ public class Temperature : MonoBehaviour
             {
                 CurrentTemperature = MaxTemperature = 0;
             }
+        }
+
+        if (CurrentTemperature < 0)
+        {
+            GameManager.Instance.playerDeath = true;
+            PopupManager.ShowPopup<UI_Popup>("Popup Death");
         }
 
         Debug.Log("최대 온도" + MaxTemperature);
