@@ -9,6 +9,8 @@ public class IceSpike : MonoBehaviour
     private PlayerController player;
     private Rigidbody2D playerRb;
 
+    public float damage = 3;
+
     private void Start()
     {
         player = GameManager.Instance.player;
@@ -25,7 +27,7 @@ public class IceSpike : MonoBehaviour
             if (contactPoint.y > center.y && playerRb.velocity.y < 0)
             {
                 if (player.GetTree() != null)
-                    player.GetTree().TakeDamage();
+                    player.GetTree().TakeDamage(damage);
             }
         }
     }
