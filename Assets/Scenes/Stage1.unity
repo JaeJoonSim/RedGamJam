@@ -263,7 +263,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.025591, y: -4.088102}
+  m_Offset: {x: 3.025591, y: -5.3636446}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -274,7 +274,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.030231, y: 0.36945248}
+  m_Size: {x: 14.030231, y: 2.920537}
   m_EdgeRadius: 0
 --- !u!1 &85240663
 GameObject:
@@ -919,6 +919,79 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &303064535
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 28.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244499179670519327, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244499179670519327, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202364988650515845, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.35499
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202364988650515845, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.7584982
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710131796987738509, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_Name
+      value: MovingPlatform
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
 --- !u!1 &331863019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,7 +2928,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0018606186, y: -5.419914}
+  m_Offset: {x: 1.762476, y: -7.852106}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2866,7 +2939,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.9489727, y: 3.7084608}
+  m_Size: {x: 3.4202995, y: 8.572845}
   m_EdgeRadius: 0
 --- !u!1 &1514517229
 GameObject:
@@ -20001,3 +20074,4 @@ SceneRoots:
   - {fileID: 1514517230}
   - {fileID: 288471735}
   - {fileID: 1539302468}
+  - {fileID: 303064535}
