@@ -94,7 +94,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -248749591
+  m_SortingLayerID: -2043265055
   m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &3096695495628918046
@@ -209,7 +209,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -248749591
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 7927656e8ca8bba4d9f7cbe4db774959, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -793,7 +793,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -248749591
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 7927656e8ca8bba4d9f7cbe4db774959, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -865,7 +865,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -248749591
+  m_SortingLayerID: -2043265055
   m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &8725805742019411318
