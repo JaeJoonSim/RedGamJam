@@ -3226,6 +3226,7 @@ MonoBehaviour:
   playerCanMove: 1
   SelectedTreeList: 
   startItemType: 0
+  caveDialogue: []
 --- !u!4 &288471735
 Transform:
   m_ObjectHideFlags: 0
@@ -14071,13 +14072,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1503938373861080399, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.343
+      objectReference: {fileID: 0}
     - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.23
+      value: 28.29
       objectReference: {fileID: 0}
     - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.9
+      value: -9.96
       objectReference: {fileID: 0}
     - target: {fileID: 2241700217179499961, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14111,13 +14116,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2244499179670519327, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202364988650515845, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0132065
+      objectReference: {fileID: 0}
     - target: {fileID: 4202364988650515845, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
       propertyPath: m_Size.y
-      value: 0.6826
+      value: 1.1837764
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202364988650515845, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.122369766
       objectReference: {fileID: 0}
     - target: {fileID: 4202364988650515845, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
       propertyPath: m_Offset.y
-      value: -0.7346153
+      value: -0.8106544
       objectReference: {fileID: 0}
     - target: {fileID: 6710131796987738509, guid: 899e8c74f2d066b4fa2847b7bd0e564a, type: 3}
       propertyPath: m_Name
