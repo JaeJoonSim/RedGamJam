@@ -1,5 +1,7 @@
+using Assets.SimpleLocalization.Scripts;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,6 +10,13 @@ namespace BlueRiver.Items
 { 
     public class TreeSelectorCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
+        public Transform iconArea;
+
+        public TextMeshProUGUI title;
+        public TextMeshProUGUI weight;
+        public TextMeshProUGUI temperature;
+        public TextMeshProUGUI damaged;
+
         private Button selectButton;
         private TreeItemType treeType;
         public event System.Action<TreeItemType> OnItemSelected;
@@ -26,6 +35,19 @@ namespace BlueRiver.Items
         public void SetItem(TreeItemType itemType)
         {
             this.treeType = itemType;
+
+            var tree = TreeItemIcon.Instance.SearchTree(itemType);
+
+            if (tree != null)
+            {
+                Tree go = Instantiate(tree, iconArea);
+                go.name = "Tree Icon";
+
+                title.SetText(LocalizationManager.Localize(tree.LocalizationKey));
+                weight.SetText($"{tree.DisplayWeight} kg");
+                temperature.SetText($"{tree.GetTemperature()}");
+                damaged.SetText(LocalizationManager.Localize(tree.treeDamageKey));
+            }
         }
 
         private void OnClick()

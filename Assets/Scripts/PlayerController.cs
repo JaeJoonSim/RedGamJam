@@ -63,12 +63,14 @@ namespace BlueRiver.Character
             col = GetComponent<CapsuleCollider2D>();
 
             cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
-            PopupManager.ShowPopup<UI_Popup>("Item Selector");
+            PopupManager.ShowPopup<UI_Popup>("Tree Selector");
         }
 
         private void Start()
         {
             lighterRemainingTime = stats.LighterTime;
+            _jumpToConsume = false;
+            _timeJumpWasPressed = -1;
         }
 
         private void Update()
@@ -295,6 +297,7 @@ namespace BlueRiver.Character
             if (!treeSelect && tree != null)
             {
                 this.tree = Instantiate(tree, treeArea);
+                this.tree.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 treeSelect = true;
             }
         }
