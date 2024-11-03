@@ -107,19 +107,19 @@ MonoBehaviour:
     LocalizationKey: 
     DescriptionKey: 
   - itemType: 1
-    icon: {fileID: 0}
+    icon: {fileID: 8139638142926992325, guid: da5226d50f4397c40adf7096c717c5b8, type: 3}
     LocalizationKey: ItemSelect.Cell.ItemName.1
     DescriptionKey: ItemSelect.Cell.ItemDescription.1
   - itemType: 2
-    icon: {fileID: 0}
+    icon: {fileID: 4346034838208468123, guid: 5f7ce6dcc75a6334d8529d0d5d0824be, type: 3}
     LocalizationKey: ItemSelect.Cell.ItemName.2
     DescriptionKey: ItemSelect.Cell.ItemDescription.2
   - itemType: 3
-    icon: {fileID: 0}
+    icon: {fileID: 5135653299311383192, guid: 662972021e8d5724aa3fdc8f67f46f80, type: 3}
     LocalizationKey: ItemSelect.Cell.ItemName.3
     DescriptionKey: ItemSelect.Cell.ItemDescription.3
   - itemType: 4
-    icon: {fileID: 0}
+    icon: {fileID: 5460678560432339298, guid: f964ebd27a86e0d489fe37ea515a0bcd, type: 3}
     LocalizationKey: ItemSelect.Cell.ItemName.4
     DescriptionKey: ItemSelect.Cell.ItemDescription.4
 --- !u!1 &6334345643162373231
