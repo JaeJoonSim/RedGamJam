@@ -20,6 +20,11 @@ public class StartTriggerEvent : MonoBehaviour
         ConversationManager.OnConversationEnded += ConversationEnd;
     }
 
+    private void OnDisable()
+    {
+        ConversationManager.OnConversationEnded -= ConversationEnd;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !isStartActionEnd)

@@ -2,6 +2,7 @@ using BlueRiver.Character;
 using BlueRiver.UI;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace BlueRiver.Items
@@ -29,7 +30,7 @@ namespace BlueRiver.Items
 
             GameManager.Instance.SetClickEscape(false);
 
-            for (int i = 0; i < cellCount; i++)
+            for (int i = 1; i < TreeItemIcon.Instance.trees.Count; i++)
             {
                 if (GameManager.Instance.SelectedTreeList.Contains((TreeItemType)i + 1))
                     continue;
@@ -43,6 +44,9 @@ namespace BlueRiver.Items
                     cell.SetItem((TreeItemType)i + 1);
                     cell.OnItemSelected += OnItemSelected;
                 }
+
+                if (cellCount == i)
+                    break;
             }
         }
 

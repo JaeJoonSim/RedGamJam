@@ -66,7 +66,7 @@ namespace BlueRiver.UI
 
         private void OnClickMainMenuButton()
         {
-
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

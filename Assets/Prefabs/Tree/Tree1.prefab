@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LocalizationKey: TreeSelect.Cell.Title.1
-  treeDamageKey: TreeSelect.Cell.Damaged.Low
+  treeDamageKey: TreeSelect.Cell.Damaged.Middle
   Weight: 3.5
   DisplayWeight: 65
   Damage: 3

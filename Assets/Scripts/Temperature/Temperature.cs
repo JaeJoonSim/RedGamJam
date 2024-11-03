@@ -1,5 +1,6 @@
 using BlueRiver;
 using BlueRiver.UI;
+using DialogueEditor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,13 +17,25 @@ public class Temperature : MonoBehaviour
     [SerializeField] private float DecreaseMaxTemperature;
 
     //현재 온도
-    private float CurrentTemperature;
+    private float CurrentTemperature = 1f;
     
     private float PrevTemperature;
 
     private bool IsPause;
 
-    private void Start()
+    private void OnEnable()
+    {
+        ConversationManager.OnConversationStarted += SetStartPause;
+        ConversationManager.OnConversationEnded += SetStopPause;
+    }
+
+    private void OnDisable()
+    {
+        ConversationManager.OnConversationStarted -= SetStartPause;
+        ConversationManager.OnConversationEnded -= SetStopPause;
+    }
+
+    private void Awake()
     {
         CurrentTemperature = MaxTemperature;
         PrevTemperature = CurrentTemperature;
@@ -33,6 +46,16 @@ public class Temperature : MonoBehaviour
         CurrentTemperature = Mathf.Clamp(CurrentTemperature += _value, 0, MaxTemperature);
     }
 
+
+    private void SetStartPause()
+    {
+        SetPause(true);
+    }
+
+    private void SetStopPause()
+    {
+        SetPause(false);
+    }
 
     public void SetPause(bool _value)
     {
@@ -61,12 +84,6 @@ public class Temperature : MonoBehaviour
             {
                 CurrentTemperature = MaxTemperature = 0;
             }
-        }
-
-        if (CurrentTemperature < 0)
-        {
-            GameManager.Instance.playerDeath = true;
-            PopupManager.ShowPopup<UI_Popup>("Popup Death");
         }
 
         Debug.Log("최대 온도" + MaxTemperature);

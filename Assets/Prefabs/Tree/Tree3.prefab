@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a518ed24ec428a40a806faac2a22001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LocalizationKey: TreeSelect.Cell.Title.1
-  treeDamageKey: TreeSelect.Cell.Damaged.Low
+  LocalizationKey: TreeSelect.Cell.Title.3
+  treeDamageKey: TreeSelect.Cell.Damaged.High
   Weight: 3
   DisplayWeight: 80
   Damage: 5

@@ -14,20 +14,26 @@ Popup.Death.Restart,다시 시작,Restart
 Popup.Death.MainMenu,메인 메뉴,MainMenu
 ItemSelect.Cell.Title,아이템 선택,Select Item
 ItemSelect.Cell.Select,선택,Select
-ItemSelect.Cell.ItemName.1,라이터,
-ItemSelect.Cell.ItemName.2,,
-ItemSelect.Cell.ItemName.3,,
-ItemSelect.Cell.ItemName.4,,
-ItemSelect.Cell.ItemDescription.1,,
-ItemSelect.Cell.ItemDescription.2,,
-ItemSelect.Cell.ItemDescription.3,,
-ItemSelect.Cell.ItemDescription.4,,
-TreeSelect.Cell.Title.1,뱅갈 고무 나무 묘목,
+ItemSelect.Cell.ItemName.1,라이터,Lighter
+ItemSelect.Cell.ItemName.2,온도 촉진제,Temperature Heal
+ItemSelect.Cell.ItemName.3,가벼운 가방,Feather
+ItemSelect.Cell.ItemName.4,방한화,Snow Shoe
+ItemSelect.Cell.ItemDescription.1,사용하는 동안 추워지지 않는다.,Don't get cold while using the lighter.
+ItemSelect.Cell.ItemDescription.2,사용 즉시 온도가 올라간다. 라운드 당 한번 사용 가능하다.,"Recover instantly but, can only use once per round."
+ItemSelect.Cell.ItemDescription.3,묘목 무게의 영향을 받지 않는다.,Sapling weight doesn't effect player movespeed
+ItemSelect.Cell.ItemDescription.4,더 이상 눈보라에 밀리지 않는다. 하지만 온도를 올릴 수 없다. 초보자 비추.,"Don't get pushed back by the snow storm but, no longer recover."
+TreeSelect.Cell.Title.1,뱅갈 고무 나무 묘목,Bangal Rubber Sapling
+TreeSelect.Cell.Title.2,등나무 묘목,Wisteria Sapling
+TreeSelect.Cell.Title.3,백당 나무 묘목,Viburnum Sapling
+TreeSelect.Cell.Title.4,소나무 묘목,Pine Sapling
+TreeSelect.Cell.Title.5,은행나무 묘목,Ginkgo Saspling
 TreeSelect.Cell.Select,선택,Select
 TreeSelect.Cell.Weight,무게 : ,Weight
 TreeSelect.Cell.Temp,식물 온도 : ,Temperature
 TreeSelect.Cell.Damaged,내구성 : ,Durability
-TreeSelect.Cell.Damaged.Low,추위에 매우 약함,
+TreeSelect.Cell.Damaged.Low,추위에 매우 약함,Very Weak to Cold
+TreeSelect.Cell.Damaged.Middle,추위에 약함,Weak to Cold
+TreeSelect.Cell.Damaged.High,추위에 강함,Strong to Cold
 Stage1StartDialogue_1,너무 춥워. 어서 동굴에 가야해.,It's so cold out here. I gotta head to the cave quickly.
 Stage1StartDialogue_2,동굴이 우측 끝에 있다고 했으니 부지런히 가자.,I heard the cave is at the East side.
 Stage1SnowStorm_1,망할... 눈보라야,Oh no...Snow Storm

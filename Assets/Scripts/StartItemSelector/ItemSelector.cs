@@ -43,13 +43,18 @@ namespace BlueRiver.Items
             }
         }
 
+        private void OnDisable()
+        {
+            PopupManager.ShowPopup<UI_Popup>("Tree Selector");
+        }
+
         private void OnItemSelected(StartItemType itemType)
         {
             if (currentSelectionCount < maxSelectionCount)
             {
                 player.SelectItem(itemType);
                 currentSelectionCount++;
-
+                GameManager.Instance.startItemType = itemType;
                 if (currentSelectionCount == maxSelectionCount)
                 {
                     var UIPopup = GetComponent<UI_Popup>();

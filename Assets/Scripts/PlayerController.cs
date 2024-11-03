@@ -64,7 +64,6 @@ namespace BlueRiver.Character
             col = GetComponent<CapsuleCollider2D>();
 
             cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
-            PopupManager.ShowPopup<UI_Popup>("Item Selector");
         }
 
         private void Start()
@@ -322,7 +321,11 @@ namespace BlueRiver.Character
                 StopCoroutine(lighterCoroutine);
             }
 
-            if (!isHolding) return;
+            if (!isHolding)
+            {
+                HoldLighter(isHolding);
+                return;
+            }
 
             if (selectedItem != StartItemType.Lighter)
                 itemUsed = true;
@@ -352,7 +355,7 @@ namespace BlueRiver.Character
                 lighterCoroutine = StartCoroutine(UseLighter());
                 Debug.Log("Lighter activated");
             }
-            else if (!isHolding && isLighterActive)
+            else if (!isHolding)
             {
                 if (lighterCoroutine != null)
                 {
@@ -361,6 +364,7 @@ namespace BlueRiver.Character
 
                 if (tree != null)
                     tree.PauseDamageTime(false);
+
                 isLighterActive = false;
                 Debug.Log("Lighter deactivated");
             }
@@ -382,22 +386,26 @@ namespace BlueRiver.Character
             if (tree != null)
                 tree.PauseDamageTime(false);
             isLighterActive = false;
+            GameManager.Instance.startItemType = StartItemType.None;
             Debug.Log("Lighter effect ended");
         }
 
         private void RecoverTemperature()
         {
             tree.StartRecoverLoop(stats.RecoverTemperature);
+            GameManager.Instance.startItemType = StartItemType.None;
         }
 
         private void ResistSnowStorm()
         {
             isResistSnowStorm = true;
+            GameManager.Instance.startItemType = StartItemType.None;
         }
 
         private void IgnoreWeightPenalty()
         {
             ignoreWeightPenalty = true;
+            GameManager.Instance.startItemType = StartItemType.None;
         }
 
         #endregion
