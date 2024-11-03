@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 using System;
 using DialogueEditor;
 using System.Linq;
+using static BlueRiver.GameManager;
 
 namespace BlueRiver
 {
@@ -28,11 +29,6 @@ namespace BlueRiver
         public List<TreeItemType> SelectedTreeList = new List<TreeItemType>();
         public StartItemType startItemType = StartItemType.None;
         public List<DialogueDatas> caveDialogue = new List<DialogueDatas>();
-
-        private void Start()
-        {
-            
-        }
 
         protected override void Awake()
         {
@@ -53,13 +49,17 @@ namespace BlueRiver
             
         }
 
+        private void Start()
+        {
+            prevSceneName = SceneManager.GetActiveScene().name;
+        }
+
         private void OnEnable()
         {
             SceneManager.sceneUnloaded += OnSceneUnloaded;
             SceneManager.sceneLoaded += OnSceneLoaded;
 
-            if (player != null)
-                PopupManager.ShowPopup<UI_Popup>("Item Selector");
+            prevSceneName = SceneManager.GetActiveScene().name;
         }
 
         private void OnDestroy()
@@ -80,10 +80,27 @@ namespace BlueRiver
                 PopupManager.ShowPopup<UI_Popup>("Item Selector");
             SelectedTreeList.Clear();
 
-            var dialogue = caveDialogue.FirstOrDefault(caveDialogue => caveDialogue.sceneName == prevSceneName);
+            NPCConversation dialogueData = null;
+            if (caveDialogue.Count > 0)
+                dialogueData = caveDialogue[0].NPCConversation;
 
-            if (dialogue != null)
-                ConversationManager.Instance.StartConversation(dialogue.NPCConversation);
+            if (caveDialogue.Count == 1)
+                ConversationManager.OnConversationEnded += ConversationEnd;
+
+            if (SceneManager.GetActiveScene().name == "Cave")
+            {
+                if (dialogueData != null)
+                {
+                    ConversationManager.Instance.StartConversation(dialogueData);
+
+                    caveDialogue.Remove(caveDialogue[0]);
+                }
+            }
+        }
+
+        public void ConversationEnd()
+        {
+            ConversationManager.Instance.StartConversation(caveDialogue[0].NPCConversation);
         }
 
         private void Update()
