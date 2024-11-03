@@ -7,6 +7,7 @@ using Assets.SimpleLocalization;
 using Assets.SimpleLocalization.Scripts;
 using BlueRiver.Items;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace BlueRiver
 {
@@ -24,6 +25,14 @@ namespace BlueRiver
         public List<TreeItemType> SelectedTreeList = new List<TreeItemType>();
         public StartItemType startItemType = StartItemType.None;
 
+        private void Start()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+
+            if (player != null)
+                PopupManager.ShowPopup<UI_Popup>("Item Selector");
+        }
+
         protected override void Awake()
         {
             base.Awake();
@@ -39,6 +48,20 @@ namespace BlueRiver
                     LocalizationManager.Language = "Korean";
                     break;
             }
+
+            
+        }
+
+        private void OnDestroy()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+        {
+            if (player != null)
+                PopupManager.ShowPopup<UI_Popup>("Item Selector");
+            SelectedTreeList.Clear();
         }
 
         private void Update()

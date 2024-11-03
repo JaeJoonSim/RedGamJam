@@ -26,6 +26,10 @@ namespace BlueRiver.UI
         private void Start()
         {
             player = GameManager.Instance.player;
+
+            if (player == null)
+                gameObject.SetActive(false);
+
             tempFillImage.fillAmount = 1;
         }
 
@@ -33,7 +37,13 @@ namespace BlueRiver.UI
         {
             if (player.GetTree() != null)
             {
-                tempFillImage.fillAmount = player.GetTree().GetTemperature();
+                tempFillImage.fillAmount = player.GetTree().GetTemperature() / player.GetTree().GetMaxTemperature();
+
+                if (player.GetTree().GetTemperature() <= 0 && GameManager.Instance.playerDeath == false)
+                {
+                    GameManager.Instance.playerDeath = true;
+                    PopupManager.ShowPopup<UI_Popup>("Popup Death");
+                }
                 tempText.SetText($"{(int)player.GetTree().GetTemperature()}");
             }
 

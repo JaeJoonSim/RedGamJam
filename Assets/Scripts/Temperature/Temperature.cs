@@ -17,7 +17,7 @@ public class Temperature : MonoBehaviour
     [SerializeField] private float DecreaseMaxTemperature;
 
     //현재 온도
-    private float CurrentTemperature;
+    private float CurrentTemperature = 1f;
     
     private float PrevTemperature;
 
@@ -35,7 +35,7 @@ public class Temperature : MonoBehaviour
         ConversationManager.OnConversationEnded -= SetStopPause;
     }
 
-    private void Start()
+    private void Awake()
     {
         CurrentTemperature = MaxTemperature;
         PrevTemperature = CurrentTemperature;
@@ -84,12 +84,6 @@ public class Temperature : MonoBehaviour
             {
                 CurrentTemperature = MaxTemperature = 0;
             }
-        }
-
-        if (CurrentTemperature < 0)
-        {
-            GameManager.Instance.playerDeath = true;
-            PopupManager.ShowPopup<UI_Popup>("Popup Death");
         }
 
         Debug.Log("최대 온도" + MaxTemperature);
