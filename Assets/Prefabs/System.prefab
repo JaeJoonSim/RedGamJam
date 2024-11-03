@@ -467,12 +467,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1383621457854162047}
     m_Modifications:
     - target: {fileID: 2233598162524660227, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233598162524660227, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.96
+      value: 16.55
       objectReference: {fileID: 0}
     - target: {fileID: 2233598162524660227, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.25
+      value: 8.41
       objectReference: {fileID: 0}
     - target: {fileID: 2233598162524660227, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -533,6 +537,10 @@ PrefabInstance:
     - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
       propertyPath: ForceModule.x.scalar
       value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 57.261177
       objectReference: {fileID: 0}
     - target: {fileID: 4434509618866710547, guid: 9c25265643de0f7448e24a01595ca33c, type: 3}
       propertyPath: TriggerModule.enabled
@@ -688,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4123451063739325367, guid: 2cc0ca3245293134c867b1160e0088f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.11
+      value: 9.87
       objectReference: {fileID: 0}
     - target: {fileID: 4123451063739325367, guid: 2cc0ca3245293134c867b1160e0088f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -760,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9097991945009591363, guid: 2cc0ca3245293134c867b1160e0088f1, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9097991945009591363, guid: 2cc0ca3245293134c867b1160e0088f1, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
@@ -866,13 +874,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1383621457854162047}
     m_Modifications:
+    - target: {fileID: 3502493065075635102, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5246151416062107763, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.68
       objectReference: {fileID: 0}
     - target: {fileID: 5246151416062107763, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.9
+      value: 9.59
       objectReference: {fileID: 0}
     - target: {fileID: 5246151416062107763, guid: e94e0b76cc3568f40a2a4493002a8c8c, type: 3}
       propertyPath: m_LocalPosition.z
