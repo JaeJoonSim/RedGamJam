@@ -382,22 +382,26 @@ namespace BlueRiver.Character
             if (tree != null)
                 tree.PauseDamageTime(false);
             isLighterActive = false;
+            GameManager.Instance.startItemType = StartItemType.None;
             Debug.Log("Lighter effect ended");
         }
 
         private void RecoverTemperature()
         {
             tree.StartRecoverLoop(stats.RecoverTemperature);
+            GameManager.Instance.startItemType = StartItemType.None;
         }
 
         private void ResistSnowStorm()
         {
             isResistSnowStorm = true;
+            GameManager.Instance.startItemType = StartItemType.None;
         }
 
         private void IgnoreWeightPenalty()
         {
             ignoreWeightPenalty = true;
+            GameManager.Instance.startItemType = StartItemType.None;
         }
 
         #endregion

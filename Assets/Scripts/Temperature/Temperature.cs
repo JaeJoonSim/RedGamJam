@@ -1,5 +1,6 @@
 using BlueRiver;
 using BlueRiver.UI;
+using DialogueEditor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,18 @@ public class Temperature : MonoBehaviour
 
     private bool IsPause;
 
+    private void OnEnable()
+    {
+        ConversationManager.OnConversationStarted += SetStartPause;
+        ConversationManager.OnConversationEnded += SetStopPause;
+    }
+
+    private void OnDisable()
+    {
+        ConversationManager.OnConversationStarted -= SetStartPause;
+        ConversationManager.OnConversationEnded -= SetStopPause;
+    }
+
     private void Start()
     {
         CurrentTemperature = MaxTemperature;
@@ -33,6 +46,16 @@ public class Temperature : MonoBehaviour
         CurrentTemperature = Mathf.Clamp(CurrentTemperature += _value, 0, MaxTemperature);
     }
 
+
+    private void SetStartPause()
+    {
+        SetPause(true);
+    }
+
+    private void SetStopPause()
+    {
+        SetPause(false);
+    }
 
     public void SetPause(bool _value)
     {

@@ -54,7 +54,7 @@ namespace BlueRiver.Items
             {
                 player.SelectItem(itemType);
                 currentSelectionCount++;
-
+                GameManager.Instance.startItemType = itemType;
                 if (currentSelectionCount == maxSelectionCount)
                 {
                     var UIPopup = GetComponent<UI_Popup>();
