@@ -2623,6 +2623,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1383621457854162047, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
   m_PrefabInstance: {fileID: 197497469}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &197497471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 81810881522031632, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
+  m_PrefabInstance: {fileID: 197497469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c7a63931600ab4ba1e9166f3d83788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &201473876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25078,6 +25089,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6432315935212990011, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 356.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25511,7 +25526,19 @@ MonoBehaviour:
         m_CallState: 2
   endCallback:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 197497471}
+        m_TargetAssemblyTypeName: BlueRiver.GameManager, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cave
+          m_BoolArgument: 0
+        m_CallState: 2
   IngnoreSnowStorm: 1
   IgnorePlayerMove: 1
 --- !u!50 &1190124829
