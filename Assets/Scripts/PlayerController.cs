@@ -64,7 +64,7 @@ namespace BlueRiver.Character
             col = GetComponent<CapsuleCollider2D>();
 
             cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
-            PopupManager.ShowPopup<UI_Popup>("Tree Selector");
+            PopupManager.ShowPopup<UI_Popup>("Item Selector");
         }
 
         private void Start()
