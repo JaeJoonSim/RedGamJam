@@ -12,7 +12,8 @@ public class StartTriggerEvent : MonoBehaviour
     
     public bool IngnoreSnowStorm = true;
     public bool IgnorePlayerMove = false;    
-    private bool isEnd = false;
+    private bool isStartActionEnd = false;
+    private bool isEndActionEnd = false;
 
     private void OnEnable()
     {
@@ -21,24 +22,25 @@ public class StartTriggerEvent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !isEnd)
+        if (collision.CompareTag("Player") && !isStartActionEnd)
         {
             if (IngnoreSnowStorm)
                 GameManager.Instance.playerIgnoreSnowStorm = true;
             if (IgnorePlayerMove)
                 GameManager.Instance.playerCanMove = false;
             action?.Invoke();
-            isEnd = true;
+            isStartActionEnd = true;
         }
     }
 
     private void ConversationEnd()
     {
-        if (isEnd)
+        if (isStartActionEnd && !isEndActionEnd)
         {
             if (IgnorePlayerMove)
                 GameManager.Instance.playerCanMove = true;
             endCallback?.Invoke();
+            isEndActionEnd = true;
         }
     }
 }

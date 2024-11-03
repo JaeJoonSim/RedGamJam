@@ -80,16 +80,17 @@ namespace BlueRiver
 
         public void StopSnowStorm()
         {
+            snowStormParticle.Stop();
             isBlizzardActive = false;
             blizzardTimer = 0;
-            snowStormParticle.Stop();
             Debug.Log("Snowstorm ended!");
         }
 
         private void ApplySnowStormEffect()
         {
-            blizzardTimer -= Time.deltaTime;
-            if (blizzardTimer <= 0)
+            if (blizzardTimer > 0)
+                blizzardTimer -= Time.deltaTime;
+            else
             {
                 StopSnowStorm();
                 return;

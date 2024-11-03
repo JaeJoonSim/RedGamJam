@@ -10,9 +10,13 @@ public class DestroyPlatform : DefaultPlatform
     [SerializeField]
     private float fallSpeed;
 
+    [SerializeField]
+    private bool useBeginEvent = true;
+
     protected override void BeginEvent()
     {
-        StartCoroutine(SetDestroyPlatform());
+        if (useBeginEvent)
+            StartCoroutine(SetDestroyPlatform(destroyTime));
     }
 
     protected override void EndEvent()
@@ -20,13 +24,18 @@ public class DestroyPlatform : DefaultPlatform
         
     }
 
-    private IEnumerator SetDestroyPlatform()
+    public void FallPlaform()
+    {
+        StartCoroutine(SetDestroyPlatform());
+    }
+
+    public IEnumerator SetDestroyPlatform(float value = 0)
     {
         Camera mainCamera = Camera.main;
 
         while (true)
         {
-            yield return new WaitForSeconds(destroyTime);
+            yield return new WaitForSeconds(value);
 
             while (true)
             {
