@@ -22,6 +22,7 @@ namespace BlueRiver
         private bool canClickEscape = true;
 
         public List<TreeItemType> SelectedTreeList = new List<TreeItemType>();
+        public StartItemType startItemType = StartItemType.None;
 
         protected override void Awake()
         {

@@ -1,4 +1,5 @@
 using BlueRiver.Character;
+using BlueRiver.Items;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,6 +21,8 @@ namespace BlueRiver.UI
         [SerializeField]
         private Transform itemIconArea;
 
+        private GameObject itemIcon;
+
         private void Start()
         {
             player = GameManager.Instance.player;
@@ -32,6 +35,22 @@ namespace BlueRiver.UI
             {
                 tempFillImage.fillAmount = player.GetTree().GetTemperature();
                 tempText.SetText($"{(int)player.GetTree().GetTemperature()}");
+            }
+
+            if (GameManager.Instance.startItemType != Items.StartItemType.None)
+            {
+                if (itemIcon == null)
+                {
+                    var itemIconObj = StartItemIcon.Instance.SearchItem(GameManager.Instance.startItemType);
+                    if (itemIconObj != null && itemIcon == null)
+                        itemIcon = Instantiate(itemIconObj, itemIconArea);
+                }
+            }
+            else
+            {
+                if (itemIcon != null)
+                    Destroy(itemIcon);
+                itemIcon = null;
             }
         }
     }
