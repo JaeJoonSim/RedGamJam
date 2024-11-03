@@ -29,11 +29,6 @@ namespace BlueRiver
         public StartItemType startItemType = StartItemType.None;
         public List<DialogueDatas> caveDialogue = new List<DialogueDatas>();
 
-        private void Start()
-        {
-            
-        }
-
         protected override void Awake()
         {
             base.Awake();
@@ -53,13 +48,17 @@ namespace BlueRiver
             
         }
 
+        private void Start()
+        {
+            prevSceneName = SceneManager.GetActiveScene().name;
+        }
+
         private void OnEnable()
         {
             SceneManager.sceneUnloaded += OnSceneUnloaded;
             SceneManager.sceneLoaded += OnSceneLoaded;
 
-            if (player != null)
-                PopupManager.ShowPopup<UI_Popup>("Item Selector");
+            prevSceneName = SceneManager.GetActiveScene().name;
         }
 
         private void OnDestroy()
@@ -80,10 +79,19 @@ namespace BlueRiver
                 PopupManager.ShowPopup<UI_Popup>("Item Selector");
             SelectedTreeList.Clear();
 
-            var dialogue = caveDialogue.FirstOrDefault(caveDialogue => caveDialogue.sceneName == prevSceneName);
+            NPCConversation dialogueData = null;
+            if (caveDialogue.Count > 0)
+                dialogueData = caveDialogue[0].NPCConversation;
 
-            if (dialogue != null)
-                ConversationManager.Instance.StartConversation(dialogue.NPCConversation);
+            if (SceneManager.GetActiveScene().name == "Cave")
+            {
+                if (dialogueData != null)
+                {
+                    ConversationManager.Instance.StartConversation(dialogueData);
+
+                    caveDialogue.Remove(caveDialogue[0]);
+                }
+            }
         }
 
         private void Update()
