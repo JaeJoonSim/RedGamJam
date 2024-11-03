@@ -43,7 +43,6 @@ namespace BlueRiver
 
         private IEnumerator SnowStormOneCycle()
         {
-            snowStormParticle.Play();
             StartSnowStorm();
             yield return new WaitForSeconds(snowStats.Event_Snow_Time);
             StopSnowStorm();
@@ -54,16 +53,25 @@ namespace BlueRiver
             while (true)
             {
                 yield return new WaitForSeconds(snowStats.Event_Snow_Start + Random.Range(0, snowStats.Event_Snow_Start));
-                snowStormParticle.Play();
                 StartSnowStorm();
                 yield return new WaitForSeconds(snowStats.Event_Snow_Time);
                 StopSnowStorm();
                 yield return new WaitForSeconds(snowStats.Event_Snow_Cool);
             }
         }
-
-        private void StartSnowStorm()
+        
+        public void StartStartSnowStormUnlimitTime()
         {
+            snowStormParticle.Play();
+            isBlizzardActive = true;
+            blizzardTimer = 999999;
+
+            Debug.Log("Snowstorm started!");
+        }
+
+        public void StartSnowStorm()
+        {
+            snowStormParticle.Play();
             isBlizzardActive = true;
             blizzardTimer = snowStats.Event_Snow_Time;
             
@@ -73,6 +81,7 @@ namespace BlueRiver
         public void StopSnowStorm()
         {
             isBlizzardActive = false;
+            blizzardTimer = 0;
             snowStormParticle.Stop();
             Debug.Log("Snowstorm ended!");
         }

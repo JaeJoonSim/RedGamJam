@@ -74,7 +74,11 @@ namespace BlueRiver.Character
         private void Update()
         {
             time += Time.deltaTime;
-            GatherInput();
+
+            if (GameManager.Instance.playerCanMove)
+                GatherInput();
+            else
+                frameInput = new FrameInput();
 
             if (!playerDeath)
             {

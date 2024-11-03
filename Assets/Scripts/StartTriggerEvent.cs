@@ -9,7 +9,9 @@ public class StartTriggerEvent : MonoBehaviour
 {
     public UnityEvent action;
     public UnityEvent endCallback;
-
+    
+    public bool IngnoreSnowStorm = true;
+    public bool IgnorePlayerMove = false;    
     private bool isEnd = false;
 
     private void OnEnable()
@@ -19,9 +21,12 @@ public class StartTriggerEvent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !isEnd)
         {
-            GameManager.Instance.playerIgnoreSnowStorm = true;
+            if (IngnoreSnowStorm)
+                GameManager.Instance.playerIgnoreSnowStorm = true;
+            if (IgnorePlayerMove)
+                GameManager.Instance.playerCanMove = false;
             action?.Invoke();
             isEnd = true;
         }
@@ -31,8 +36,9 @@ public class StartTriggerEvent : MonoBehaviour
     {
         if (isEnd)
         {
+            if (IgnorePlayerMove)
+                GameManager.Instance.playerCanMove = true;
             endCallback?.Invoke();
-            Destroy(gameObject);
         }
     }
 }

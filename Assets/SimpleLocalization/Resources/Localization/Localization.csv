@@ -10,6 +10,21 @@ Popup.Settings.VFX,SFX,SFX
 Popup.Settings.BGM,BGM,BGM
 Popup.Settings.Back,뒤로 가기,Back
 Popup.Settings.Reset,초기화,Reset
-,,
+Popup.Death.Restart,다시 시작,Restart
+Popup.Death.MainMenu,메인 메뉴,MainMenu
 ItemSelect.Cell.Select,선택,Select
 TreeSelect.Cell.Select,선택,Select
+Stage1StartDialogue_1,너무 춥워. 어서 동굴에 가야해.,It's so cold out here. I gotta head to the cave quickly.
+Stage1StartDialogue_2,동굴이 우측 끝에 있다고 했으니 부지런히 가자.,I heard the cave is at the East side.
+Stage1SnowStorm_1,망할... 눈보라야,Oh no...Snow Storm
+Stage1SnowStorm_2,어서 저 기둥 뒤에 숨어야 해!,I have to hide behind the pillar!
+Stage1SnowStorm_3,눈보라에 밀려가기 전에 저 기둥까지 이동하자.,Lets move to the pillar before I get pushed out by the storm.
+Stage1SnowStormBlock_1,역시 여긴 안전할 것 같았어.,I knew it would be safe here.
+Stage1SnowStormBlock_2,앞으로 이런 돌 기둥 뒤에서 눈보라를 피하면 좋겠네.,I should hide behind these pillars whenever the storm comes.
+Stage1PlatformBreak_Before_1,왠지 이 발판 불안한데..,Ah.. I got no good feelings on this platform.
+Stage1PlatformBreak_Before_2,으악!!!,Yikes!!!
+Stage1PlatformBreak_After_1,역시...불안했어. 앞으로 조심해야겠다.,Pew..I should becareful of these platforms.
+Stage1PlatformBreak_After_2,저 앞에 움막은 뭐지? 따뜻해보여.,What is that hut. I looks warm inside.
+Stage1PlatformBreak_After_3,들어가서 잠시 몸을 녹여야겠어.,I should go inside to warm up.
+Stage1CaveArrive_1,드디어 첫번째 묘목을 가지고 도착했어.,Finally I arrived at the cave.
+Stage1CaveArrive_2,어서 들어가서 묘목을 돌려놓자.,"I should place the sapling back, where it used to be."
