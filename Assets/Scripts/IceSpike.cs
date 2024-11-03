@@ -21,6 +21,7 @@ public class IceSpike : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            SoundManager.Instance.PlaySound("IceSpike");
             Vector2 contactPoint = collision.ClosestPoint(transform.position);
             Vector2 center = transform.position;
 

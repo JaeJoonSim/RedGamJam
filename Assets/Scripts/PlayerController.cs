@@ -220,7 +220,9 @@ namespace BlueRiver.Character
         {
             if (particleController.SearchParticle("SlipEffect").isPlaying)
                 particleController.StopParticle("SlipEffect");
-            
+
+            SoundManager.Instance.PlaySound("jump");
+
             _endedJumpEarly = false;
             _timeJumpWasPressed = 0;
             _bufferedJumpUsable = false;
@@ -486,6 +488,7 @@ namespace BlueRiver.Character
 
         public void SetInSnowStorm(bool value)
         {
+            SoundManager.Instance.PlaySound("Slip");
             inSnowStorm = value;
 
             if (value)
@@ -495,6 +498,11 @@ namespace BlueRiver.Character
 
                 snowStormCoroutine = StartCoroutine(ResetInSnowStormAfterDelay(0.1f));
             }
+        }
+
+        public void FootStep()
+        {
+            SoundManager.Instance.PlaySound("FootStep");
         }
 
         private IEnumerator ResetInSnowStormAfterDelay(float delay)

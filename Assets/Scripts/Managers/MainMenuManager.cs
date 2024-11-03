@@ -7,8 +7,17 @@ namespace BlueRiver.UI
 {
     public class MainMenuManager : MonoBehaviour
     {
+        public void Start()
+        {
+            SoundManager.Instance.PlaySound("MainMenu");
+        }
+
         public void ChangeScene(string sceneName)
         {
+            if(sceneName == "Stage1")
+            {
+                SoundManager.Instance.PlaySound("MainGameStart");
+            }
             SceneManager.LoadScene(sceneName);
         }
 
