@@ -11,6 +11,7 @@ namespace BlueRiver.Character
     public class PlayerController : MonoBehaviour, IPlayerController
     {
         public PlayerStats stats;
+        public SnowStormStats snowStats;
         private Rigidbody2D rigid2d;
         private CapsuleCollider2D col;
         private FrameInput frameInput;
@@ -241,14 +242,25 @@ namespace BlueRiver.Character
             }
             else
             {
-                float speed = 0; ;
+                float speed = 0;
 
-                if (tree == null || ignoreWeightPenalty)
+                if (tree != null)
+                    speed = tree.GetWeight();
+                else
+                    speed = stats.MaxSpeed;
+
+                if (ignoreWeightPenalty)
                     speed = stats.MaxSpeed;
                 else if (inSnowStorm && !isResistSnowStorm)
-                    speed = stats.MaxSpeed - stats.InSnowStormMoveSpeed;
-                else
-                    speed = tree.GetWeight();
+                {
+                    if (frameInput.Move.x > 0)
+                        speed -= snowStats.Event_Snow_Spd;
+                    else
+                        speed += snowStats.Event_Snow_Spd;
+                }
+
+                if (speed < 0)
+                    speed = 0.5f;
 
                 frameVelocity.x = Mathf.MoveTowards(frameVelocity.x, frameInput.Move.x * speed, stats.Acceleration * Time.fixedDeltaTime);
             }

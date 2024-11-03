@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 1d535473f9550ad41ae609041c438f24, type: 2}
+  snowStats: {fileID: 11400000, guid: bced149aa53523e48a90f77eeb5ab7f9, type: 2}
   treeArea: {fileID: 5857890644687378554}
   anim: {fileID: 1506690098528232719}
   particleController: {fileID: 4426643022367348828}
@@ -262,7 +263,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1234279241734328084}
