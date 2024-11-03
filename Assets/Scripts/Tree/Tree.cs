@@ -7,16 +7,18 @@ using UnityEngine;
 [RequireComponent(typeof(Temperature))]
 public class Tree : MonoBehaviour
 {
+    public string LocalizationKey;
+    public string treeDamageKey;
     //무게
-    [SerializeField]float Weight;
+    public float Weight;
     // UI 표시 무게
-    [SerializeField] float DisplayWeight;
+    public float DisplayWeight;
     //데미지
-    [SerializeField]float Damage;
+    public float Damage;
     //회복량
-    [SerializeField]float RecoverValue;
+    public float RecoverValue;
     //데미지 시간
-    [SerializeField]float DamageTime;
+    public float DamageTime;
 
     //회복 정도는 현재 최대 온도 게이지의 n% 만큼 회복(움막)
     [SerializeField] private float RecoverPercent;
@@ -151,6 +153,9 @@ public class Tree : MonoBehaviour
 
     public float GetTemperature()
     {
+        if (TreeTemperature == null)
+            TreeTemperature = GetComponent<Temperature>();
+
         return TreeTemperature.GetTemperature();
     }
 

@@ -15,6 +15,7 @@ public class HeldCollider : MonoBehaviour
     private bool isPlayerInTrigger = false;
     private bool isColliderDisabled = false;
     private float holdTime = 0f;
+    private bool isOpened = false;
 
     private void Start()
     {
@@ -26,8 +27,7 @@ public class HeldCollider : MonoBehaviour
     {
         obstacleCollider.enabled = !isColliderDisabled;
 
-
-        if (isPlayerInTrigger && !isColliderDisabled)
+        if (isPlayerInTrigger && !isColliderDisabled && !isOpened)
         {
             fillImage.fillAmount = holdTime / holdDuration;
 
@@ -54,7 +54,8 @@ public class HeldCollider : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             isPlayerInTrigger = true;
-            arrowUI.gameObject.SetActive(true);
+            if (!isOpened)
+                arrowUI.gameObject.SetActive(true);
         }
     }
 
@@ -74,13 +75,14 @@ public class HeldCollider : MonoBehaviour
 
     private void DisableCollider()
     {
-        obstacleCollider.enabled = false;
+        obstacleCollider.isTrigger = false;
         isColliderDisabled = true;
+        isOpened = true;
     }
 
     private void EnableCollider()
     {
-        obstacleCollider.enabled = true;
+        obstacleCollider.isTrigger = true;
         isColliderDisabled = false;
     }
 }

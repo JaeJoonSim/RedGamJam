@@ -13,7 +13,12 @@ Popup.Settings.Reset,초기화,Reset
 Popup.Death.Restart,다시 시작,Restart
 Popup.Death.MainMenu,메인 메뉴,MainMenu
 ItemSelect.Cell.Select,선택,Select
+TreeSelect.Cell.Title.1,뱅갈 고무 나무 묘목,
 TreeSelect.Cell.Select,선택,Select
+TreeSelect.Cell.Weight,무게 : ,Weight
+TreeSelect.Cell.Temp,식물 온도 : ,Temperature
+TreeSelect.Cell.Damaged,내구성 : ,Durability
+TreeSelect.Cell.Damaged.Low,추위에 매우 약함,
 Stage1StartDialogue_1,너무 춥워. 어서 동굴에 가야해.,It's so cold out here. I gotta head to the cave quickly.
 Stage1StartDialogue_2,동굴이 우측 끝에 있다고 했으니 부지런히 가자.,I heard the cave is at the East side.
 Stage1SnowStorm_1,망할... 눈보라야,Oh no...Snow Storm
