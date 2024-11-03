@@ -60,6 +60,12 @@ namespace BlueRiver
             sfxPlayer.PlayOneShot(audioClipsDic[name], volume * masterVolumeSFX);
         }
 
+        public void StopSound()
+        {
+            sfxPlayer.Stop();
+        }
+
+
         public GameObject PlayLoopSound(string name)
         {
             if (audioClipsDic.ContainsKey(name) == false) return null;

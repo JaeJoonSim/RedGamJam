@@ -8,6 +8,8 @@ using Assets.SimpleLocalization.Scripts;
 using BlueRiver.Items;
 using UnityEngine.SceneManagement;
 using System;
+using DialogueEditor;
+using System.Linq;
 
 namespace BlueRiver
 {
@@ -21,16 +23,15 @@ namespace BlueRiver
 
         private ParticleSystem snowStormEffect;
         private bool canClickEscape = true;
+        private string prevSceneName = "";
 
         public List<TreeItemType> SelectedTreeList = new List<TreeItemType>();
         public StartItemType startItemType = StartItemType.None;
+        public List<DialogueDatas> caveDialogue = new List<DialogueDatas>();
 
         private void Start()
         {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-
-            if (player != null)
-                PopupManager.ShowPopup<UI_Popup>("Item Selector");
+            
         }
 
         protected override void Awake()
@@ -52,9 +53,25 @@ namespace BlueRiver
             
         }
 
+        private void OnEnable()
+        {
+            SceneManager.sceneUnloaded += OnSceneUnloaded;
+            SceneManager.sceneLoaded += OnSceneLoaded;
+
+            if (player != null)
+                PopupManager.ShowPopup<UI_Popup>("Item Selector");
+        }
+
         private void OnDestroy()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        }
+
+        private void OnSceneUnloaded(Scene scene)
+        {
+            // 이전 씬의 이름을 저장합니다.
+            prevSceneName = scene.name;
         }
 
         private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
@@ -62,6 +79,11 @@ namespace BlueRiver
             if (player != null)
                 PopupManager.ShowPopup<UI_Popup>("Item Selector");
             SelectedTreeList.Clear();
+
+            var dialogue = caveDialogue.FirstOrDefault(caveDialogue => caveDialogue.sceneName == prevSceneName);
+
+            if (dialogue != null)
+                ConversationManager.Instance.StartConversation(dialogue.NPCConversation);
         }
 
         private void Update()
@@ -117,11 +139,18 @@ namespace BlueRiver
         public void ChangeScene(string sceneName = null)
         {
             playerDeath = false;
-
             if (string.IsNullOrEmpty(sceneName))
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             else
                 SceneManager.LoadScene(sceneName);
         }
+
+        [Serializable]
+        public class DialogueDatas
+        {
+            public NPCConversation NPCConversation;
+            public string sceneName;
+        }
+
     }
 }
