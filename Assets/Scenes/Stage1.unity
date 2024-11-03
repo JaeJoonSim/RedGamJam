@@ -4462,6 +4462,14 @@ PrefabInstance:
       propertyPath: endCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2913984096760712870, guid: a3ffe0418852beb4981eeda2e4f8a40a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8613167
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913984096760712870, guid: a3ffe0418852beb4981eeda2e4f8a40a, type: 3}
+      propertyPath: m_Offset.x
+      value: 3.4313679
+      objectReference: {fileID: 0}
     - target: {fileID: 3518314993172877801, guid: a3ffe0418852beb4981eeda2e4f8a40a, type: 3}
       propertyPath: m_Name
       value: Stage1CaveArrive Trigger
@@ -25791,7 +25799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3518314993172877801, guid: a3ffe0418852beb4981eeda2e4f8a40a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5902348840124127249, guid: a3ffe0418852beb4981eeda2e4f8a40a, type: 3}
       propertyPath: m_LocalPosition.x
