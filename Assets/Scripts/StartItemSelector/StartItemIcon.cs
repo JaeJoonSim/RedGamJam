@@ -26,11 +26,20 @@ namespace BlueRiver.Items
             return icon.icon;
         }
 
+        public Items SearchItems(StartItemType type)
+        {
+            var icon = items.FirstOrDefault(items => items.itemType == type) ?? items.FirstOrDefault(items => items.itemType == StartItemType.None);
+
+            return icon;
+        }
+
         [Serializable]
         public class Items
         {
             public StartItemType itemType;
             public GameObject icon;
+            public string LocalizationKey;
+            public string DescriptionKey;
         }
     }
 

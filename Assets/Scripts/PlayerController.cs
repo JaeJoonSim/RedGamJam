@@ -63,7 +63,7 @@ namespace BlueRiver.Character
             col = GetComponent<CapsuleCollider2D>();
 
             cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
-            PopupManager.ShowPopup<UI_Popup>("Tree Selector");
+            PopupManager.ShowPopup<UI_Popup>("Item Selector");
         }
 
         private void Start()
@@ -400,9 +400,13 @@ namespace BlueRiver.Character
             {
                 float appliedPushSpeed = !grounded ? jumpPushSpeed : pushSpeed;
 
-                rigid2d.AddForce(new Vector2(-appliedPushSpeed, 0), ForceMode2D.Force);
+                float direction = transform.localScale.x > 0 ? -1 : 1;
+
+                rigid2d.AddForce(new Vector2(direction * appliedPushSpeed, 0), ForceMode2D.Force);
             }
+
             Debug.Log("Player is pushed by the snowstorm.");
+
             if (tree != null)
                 tree.StartRecoverLoop(-damage * Time.deltaTime);
         }
