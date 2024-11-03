@@ -159,6 +159,14 @@ public class Tree : MonoBehaviour
         return TreeTemperature.GetTemperature();
     }
 
+    public float GetMaxTemperature()
+    {
+        if (TreeTemperature == null)
+            TreeTemperature = GetComponent<Temperature>();
+
+        return TreeTemperature.GetMaxTemperature();
+    }
+
     public void SetReduceDamagePercent(float _value)
     {
         ReduceDamagePercent = _value;
