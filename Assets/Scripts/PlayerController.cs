@@ -321,7 +321,11 @@ namespace BlueRiver.Character
                 StopCoroutine(lighterCoroutine);
             }
 
-            if (!isHolding) return;
+            if (!isHolding)
+            {
+                HoldLighter(isHolding);
+                return;
+            }
 
             if (selectedItem != StartItemType.Lighter)
                 itemUsed = true;
@@ -351,7 +355,7 @@ namespace BlueRiver.Character
                 lighterCoroutine = StartCoroutine(UseLighter());
                 Debug.Log("Lighter activated");
             }
-            else if (!isHolding && isLighterActive)
+            else if (!isHolding)
             {
                 if (lighterCoroutine != null)
                 {
@@ -360,6 +364,7 @@ namespace BlueRiver.Character
 
                 if (tree != null)
                     tree.PauseDamageTime(false);
+
                 isLighterActive = false;
                 Debug.Log("Lighter deactivated");
             }
