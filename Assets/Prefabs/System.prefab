@@ -104,14 +104,24 @@ MonoBehaviour:
   items:
   - itemType: 0
     icon: {fileID: 0}
+    LocalizationKey: 
+    DescriptionKey: 
   - itemType: 1
     icon: {fileID: 0}
+    LocalizationKey: ItemSelect.Cell.ItemName.1
+    DescriptionKey: ItemSelect.Cell.ItemDescription.1
   - itemType: 2
     icon: {fileID: 0}
+    LocalizationKey: ItemSelect.Cell.ItemName.2
+    DescriptionKey: ItemSelect.Cell.ItemDescription.2
   - itemType: 3
     icon: {fileID: 0}
+    LocalizationKey: ItemSelect.Cell.ItemName.3
+    DescriptionKey: ItemSelect.Cell.ItemDescription.3
   - itemType: 4
     icon: {fileID: 0}
+    LocalizationKey: ItemSelect.Cell.ItemName.4
+    DescriptionKey: ItemSelect.Cell.ItemDescription.4
 --- !u!1 &6334345643162373231
 GameObject:
   m_ObjectHideFlags: 0

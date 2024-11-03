@@ -12,7 +12,16 @@ Popup.Settings.Back,뒤로 가기,Back
 Popup.Settings.Reset,초기화,Reset
 Popup.Death.Restart,다시 시작,Restart
 Popup.Death.MainMenu,메인 메뉴,MainMenu
+ItemSelect.Cell.Title,아이템 선택,Select Item
 ItemSelect.Cell.Select,선택,Select
+ItemSelect.Cell.ItemName.1,라이터,
+ItemSelect.Cell.ItemName.2,,
+ItemSelect.Cell.ItemName.3,,
+ItemSelect.Cell.ItemName.4,,
+ItemSelect.Cell.ItemDescription.1,,
+ItemSelect.Cell.ItemDescription.2,,
+ItemSelect.Cell.ItemDescription.3,,
+ItemSelect.Cell.ItemDescription.4,,
 TreeSelect.Cell.Title.1,뱅갈 고무 나무 묘목,
 TreeSelect.Cell.Select,선택,Select
 TreeSelect.Cell.Weight,무게 : ,Weight
@@ -33,3 +42,7 @@ Stage1PlatformBreak_After_2,저 앞에 움막은 뭐지? 따뜻해보여.,What i
 Stage1PlatformBreak_After_3,들어가서 잠시 몸을 녹여야겠어.,I should go inside to warm up.
 Stage1CaveArrive_1,드디어 첫번째 묘목을 가지고 도착했어.,Finally I arrived at the cave.
 Stage1CaveArrive_2,어서 들어가서 묘목을 돌려놓자.,"I should place the sapling back, where it used to be."
+Stage2CaveEnter_1,두번째 묘목도 무사히 돌려놓을 수 있겠어.,I'm glad I could place the second sapling.
+Stage2CaveEnter_2,서둘러서 들어가자.,Lets head inside.
+Stage2Enter_1,이번 길은 조금 험난하겠어.,Its gonna be a harsh road.
+Stage2Enter_2,발 밑에 얼음 가시를 조심하자.,I should watch out for the ice thrones.

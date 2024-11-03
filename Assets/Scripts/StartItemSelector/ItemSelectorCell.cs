@@ -33,6 +33,8 @@ namespace BlueRiver.Items
         {
             this.itemType = itemType;
             var icon = StartItemIcon.Instance.SearchItem(itemType);
+            if (icon != null)
+                Instantiate(icon, iconArea);
 
             var item = StartItemIcon.Instance.SearchItems(itemType);
 
