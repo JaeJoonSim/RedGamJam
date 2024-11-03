@@ -9,6 +9,7 @@ public class PlayerDeadZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            SoundManager.Instance.PlaySound("Death");
             GameManager.Instance.playerDeath = true;
             PopupManager.ShowPopup<UI_Popup>("Popup Death");
         }

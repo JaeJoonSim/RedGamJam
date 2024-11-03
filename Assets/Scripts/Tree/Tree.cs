@@ -1,3 +1,4 @@
+using BlueRiver;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -115,16 +116,26 @@ public class Tree : MonoBehaviour
         }
     }
 
+    void PlayDeath()
+    {
+        if (IsDead())
+        {
+            SoundManager.Instance.PlaySound("Death");
+        }
+    }
+
     //나무 데미지만큼 온도 감소
     public void TakeDamage()
     {
         TreeTemperature.TakeDamage(Damage);
+        PlayDeath();
     }
 
     //외부적 요인으로 온도 감소
     public void TakeDamage(float _value)
     {
         TreeTemperature.TakeDamage(_value);
+        PlayDeath();
     }
 
     //나무 자체 힐량으로 온도 회복

@@ -8,6 +8,11 @@ namespace BlueRiver.Character
     {
         [SerializeField] private PlayerController player;
 
+        public void PlayFootStepSound()
+        {
+            SoundManager.Instance.PlaySound("FootStep");
+        }
+
         public void JumpExcute()
         {
             if (player == null)

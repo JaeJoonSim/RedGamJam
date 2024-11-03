@@ -62,6 +62,7 @@ namespace BlueRiver
         
         public void StartStartSnowStormUnlimitTime()
         {
+            SoundManager.Instance.PlaySound("SnowWind", 3.0f);
             snowStormParticle.Play();
             isBlizzardActive = true;
             blizzardTimer = 999999;
@@ -80,6 +81,7 @@ namespace BlueRiver
 
         public void StopSnowStorm()
         {
+            SoundManager.Instance.StopSound();
             snowStormParticle.Stop();
             isBlizzardActive = false;
             blizzardTimer = 0;
@@ -99,7 +101,7 @@ namespace BlueRiver
             if (player == null)
                 player = GameManager.Instance.player;
 
-            // ´«º¸¶ó¿¡ ³ëÃâµÈ ÇÃ·¹ÀÌ¾î È¿°ú Àû¿ë
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ È¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (player != null)
             {
                 player.ApplySnowStormEffect(snowStats.Event_Snow_Spd, snowStats.Event_Snow_Jump_Spd, snowStats.Event_Snow_Damage);
