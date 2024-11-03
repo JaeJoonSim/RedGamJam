@@ -26066,6 +26066,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: System
       objectReference: {fileID: 0}
+    - target: {fileID: 7408347841421875259, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
+      propertyPath: trees.Array.data[1].icon
+      value: 
+      objectReference: {fileID: 3774789281765838052, guid: 0e3e7dae5a0d48147920395ed53b23ae, type: 3}
+    - target: {fileID: 7408347841421875259, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
+      propertyPath: trees.Array.data[2].icon
+      value: 
+      objectReference: {fileID: 5839243912889398568, guid: 275d833af5ed5f0408e585706018ef17, type: 3}
     - target: {fileID: 7923395066105719110, guid: edfe7c9abb8c4244e96215b048a367fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
