@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414172ee50b38894094b26a5074106df, type: 3}
   m_Name: SnowStormStats
   m_EditorClassIdentifier: 
-  Event_Snow_Spd: 20
+  Event_Snow_Spd: 2
   Event_Snow_Jump_Spd: 60
   Event_Snow_Move_Spd: 10
   Event_Snow_Damage: 2
