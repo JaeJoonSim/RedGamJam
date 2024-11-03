@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 2
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":271.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_Before_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":271.5,"yPos":161},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_Before_2","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":300,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_Before_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":1.5,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":300,"yPos":161},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_Before_2","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 3
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":271.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStorm_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":262.5,"yPos":156},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStorm_2","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":264.5,"yPos":289},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStorm_3","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":300,"yPos":21},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStorm_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":292,"yPos":156},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStorm_2","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":294,"yPos":289},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStorm_3","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -3290,7 +3290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 3
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":152,"yPos":56},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1CaveArrive_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":160,"yPos":177},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1CaveArrive_2","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":300,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1CaveArrive_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":308,"yPos":143},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1CaveArrive_2","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -4571,7 +4571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 5
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":150,"yPos":145},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1StartDialogue_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":171,"yPos":273},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1StartDialogue_2","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":300,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1StartDialogue_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":321,"yPos":151},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1StartDialogue_2","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -4707,7 +4707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 2
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":271.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStormBlock_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":294.5,"yPos":164},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStormBlock_2","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":300,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStormBlock_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":324,"yPos":164},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1SnowStormBlock_2","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -25253,6 +25253,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6432315934382271884, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6432315934382271887, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -120.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6432315935212990011, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 308.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6432315935212990013, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6432315935212990013, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6432315935212990013, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 6432315935212990013, guid: 3fc1f1f5bd8f5e14382bd42d831a3abe, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25304,7 +25332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 3
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":271.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_After_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":277.5,"yPos":174},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_After_2","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":3,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":536.5,"yPos":181},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_After_3","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":300,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_After_1","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":305,"yPos":174},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_After_2","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":565,"yPos":181},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Stage1PlatformBreak_After_3","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
