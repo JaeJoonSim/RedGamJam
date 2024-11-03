@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 using System;
 using DialogueEditor;
 using System.Linq;
+using static BlueRiver.GameManager;
 
 namespace BlueRiver
 {
@@ -83,6 +84,9 @@ namespace BlueRiver
             if (caveDialogue.Count > 0)
                 dialogueData = caveDialogue[0].NPCConversation;
 
+            if (caveDialogue.Count == 1)
+                ConversationManager.OnConversationEnded += ConversationEnd;
+
             if (SceneManager.GetActiveScene().name == "Cave")
             {
                 if (dialogueData != null)
@@ -92,6 +96,11 @@ namespace BlueRiver
                     caveDialogue.Remove(caveDialogue[0]);
                 }
             }
+        }
+
+        public void ConversationEnd()
+        {
+            ConversationManager.Instance.StartConversation(caveDialogue[0].NPCConversation);
         }
 
         private void Update()
