@@ -45,7 +45,7 @@ namespace BlueRiver.Items
 
                 title.SetText(LocalizationManager.Localize(tree.LocalizationKey));
                 weight.SetText($"{tree.DisplayWeight} kg");
-                temperature.SetText($"{tree.GetTemperature()}");
+                temperature.SetText($"{tree.GetMaxTemperature()}");
                 damaged.SetText(LocalizationManager.Localize(tree.treeDamageKey));
             }
         }
